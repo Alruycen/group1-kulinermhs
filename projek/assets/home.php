@@ -133,7 +133,30 @@
         </div>
     </div>
 </div>
-<br/><br/><br/><br/>
+<br/><br/><br/><br/><br/>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.php">Kuliner Mahasiswa</a>
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+                <a class="nav-link" href="views/makanan.php">Makanan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="views/minuman.php">Minuman</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="views/tempat.php">Tempat</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="views/oleholeh.php">Oleh-Oleh</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="views/tentangkami.php">Tentang Kami</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
