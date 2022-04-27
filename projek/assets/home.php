@@ -17,12 +17,12 @@
         position:absolute;
         top:0;
         left:0;
-        padding-top:50px;
-        padding-bottom:50px;
+        padding-top:5%;
+        padding-bottom:5%;
     }
     .row {
-        padding-top:50px;
-        padding-bottom:50px;
+        padding-top:5%;
+        padding-bottom:5%;
     }
     .col2 {
         width:20%;
@@ -105,31 +105,36 @@
     <div class="card">
         <img class="card-img-top" src="images/placeholder.png" alt="Makanan">
         <div class="card-body">
-            <h5 class="card-title"><a href="views/makanan.php">Makanan</a></h5>
+            <h5 class="card-title">Makanan</h5>
+            <a href="views/makanan.php?page=makanan" class="btn btn-outline-success stretched-link">Go to Makanan</a>
         </div>
     </div>
     <div class="card">
         <img class="card-img-top" src="images/placeholder.png" alt="Minuman">
         <div class="card-body">
-            <h5 class="card-title"><a href="views/minuman.php">Minuman</a></h5>
+            <h5 class="card-title">Minuman</h5>
+            <a href="views/minuman.php?page=minuman" class="btn btn-outline-success stretched-link">Go to Minuman</a>
         </div>
     </div>
     <div class="card">
         <img class="card-img-top" src="images/placeholder.png" alt="Tempat">
         <div class="card-body">
-            <h5 class="card-title"><a href="views/tempat.php">Tempat</a></h5>
+            <h5 class="card-title">Tempat</h5>
+            <a href="views/tempat.php?page=tempat" class="btn btn-outline-success stretched-link">Go to Tempat</a>
         </div>
     </div>
     <div class="card">
         <img class="card-img-top" src="images/placeholder.png" alt="Oleh-Oleh">
         <div class="card-body">
-            <h5 class="card-title"><a href="views/oleholeh.php">Oleh-Oleh</a></h5>
+            <h5 class="card-title">Oleh-Oleh</h5>
+            <a href="views/oleholeh.php?page=oleholeh" class="btn btn-outline-success stretched-link">Go to Oleh-Oleh</a>
         </div>
     </div>
     <div class="card">
         <img class="card-img-top" src="images/placeholder.png" alt="Tentang Kami">
         <div class="card-body">
-            <h5 class="card-title"><a href="views/tentangkami.php">Tentang Kami</a></h5>
+            <h5 class="card-title">Tentang Kami</h5>
+            <a href="views/tentangkami.php?page=tentangkami" class="btn btn-outline-success stretched-link">Go to Oleh-Oleh</a>
         </div>
     </div>
 </div>
@@ -140,25 +145,20 @@
         <a class="navbar-brand" href="index.php">Kuliner Mahasiswa</a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-                <a class="nav-link" href="views/makanan.php">Makanan</a>
+                <a class="nav-link" href="views/makanan.php?page=makanan">Makanan</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="views/minuman.php">Minuman</a>
+                <a class="nav-link" href="views/minuman.php?page=minuman">Minuman</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="views/tempat.php">Tempat</a>
+                <a class="nav-link" href="views/tempat.php?page=tempat">Tempat</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="views/oleholeh.php">Oleh-Oleh</a>
+                <a class="nav-link" href="views/oleholeh.php?page=oleholeh">Oleh-Oleh</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="views/tentangkami.php">Tentang Kami</a>
+                <a class="nav-link" href="views/tentangkami.php?page=tentangkami">Tentang Kami</a>
             </li>
         </ul>
     </div>
 </nav>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
