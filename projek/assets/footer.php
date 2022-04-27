@@ -2,21 +2,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="../index.php">Kuliner Mahasiswa</a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-                <a class="nav-link" href="makanan.php">Makanan</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="minuman.php">Minuman</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="tempat.php">Tempat</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="oleholeh.php">Oleh-Oleh</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="tentangkami.php">Tentang Kami</a>
-            </li>
+            <?php require '../process/activenavbar.php'; ?>
         </ul>
     </div>
 </nav>
