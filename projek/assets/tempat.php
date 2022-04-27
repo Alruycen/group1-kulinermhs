@@ -1,19 +1,20 @@
+<title>Tempat</title>
 <style>
     .img-fluid {
         width:100%;
-        margin-bottom: 50px;
+        margin-bottom: 5%;
         height:10rem;
         object-fit:cover;
     }
     body {
-        padding:25px 50px 0 50px;
+        padding:2.5% 5% 0 5%;
         background:#777;
     }
     .row {
-        margin-left:5px;
+        margin-left:0.5%;
     }
     .col-sm-8 {
-        margin-right: 75px;
+        margin-right: 6%;
         max-width:60%;
         background: black;
     }
@@ -37,7 +38,10 @@
             </div>
         </div>
         <div class="col-sm-4">
-
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Makanan khas Tangerang" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Cari</button>
+            </form>
         </div>
     </div>
 </body>
