@@ -12,10 +12,9 @@
 </style>
 
 <body>
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Makanan khas Tangerang" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Cari</button>
-    </form>
+    <?php
+        require 'formsearch.php';
+    ?>
     <div class="row">
         <div class="col-6">
             <div class="card">
