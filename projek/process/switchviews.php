@@ -1,7 +1,6 @@
 <?php
 require '../assets/startertemplate.php';
 require '../assets/footer.php';
-
 switch($_GET['page']) {
     case 'makanan':
         require '../assets/makanan.php';
@@ -19,7 +18,6 @@ switch($_GET['page']) {
         require '../assets/tentangkami.php';
         break;
     default: 
-        $page = 'home';
         header('Location: ../index.php');
         break;
 }
