@@ -38,10 +38,9 @@
             </div>
         </div>
         <div class="col-sm-4">
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Makanan khas Tangerang" aria-label="Search">
-                <button class="btn btn-outline-light" type="submit">Cari</button>
-            </form>
+            <?php
+                require 'formsearch.php';
+            ?>
         </div>
     </div>
 </body>
