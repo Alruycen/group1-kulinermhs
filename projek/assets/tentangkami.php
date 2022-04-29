@@ -17,6 +17,12 @@
     .row {
         margin-top:5%;
     }
+    .active {
+        border-bottom: 3px solid #fff;
+    }
+    .nav-link:hover {
+        border-bottom: 1px solid #fff;
+    }
 </style>
 <body>
     <div class="row">
@@ -28,7 +34,7 @@
                 <div class="card-body">
                     <div class="card-title">Form: Kritik dan Saran</div>
                     <form action="#" method="post">
-                        <textarea> </textarea>
+                        <textarea class="form-control" name="tanggapan" rows="5"></textarea>
                         <br/>
                         <button type="submit" class="btn btn-block btn-outline-primary">Kirim</button>
                     </form>
