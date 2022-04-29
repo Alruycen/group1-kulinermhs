@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="carousel/carousel.css">
+<link rel="stylesheet" href="../assets/carousel/carousel.css">
 <style>
     body {
         background:#fff;
@@ -20,78 +20,53 @@
         position:absolute;
         top:0;
         left:0;
-        padding-top:5%;
-        padding-bottom:5%;
+        padding-top:3%;
+        padding-left:3%;
     }
     .row {
-        padding-top:5%;
-        padding-bottom:5%;
+        padding: 2% 0 2% 2%;
     }
-    .col2 {
-        width:20%;
-        display:table-cell;
+    .card {
+        margin:5%;
+    }
+    .nav-link:hover {
+        border-bottom: 1px solid #fff;
     }
 </style>
 
 <body>
-    <div id="banner" class="carousel carousel-fade" data-ride="carousel" data-interval="3000">
+    <div id="banner" class="carousel carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item active" data-bs-interval="3000">
                 <div class="overlay-image">
                     <img class="img-fluid" src="images/bir-pletok.jpg" alt="slide1">
                 </div>
-                    <div class="container">
-                        <h1>Kuliner Mahasiswa</h1>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="overlay-image">
-                        <img class="img-fluid" src="images/sate-bandeng.jpg" alt="slide2">
-                    </div>
-                    <div class="container">
-                        <h1>Kuliner Mahasiswa</h1>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="overlay-image">
-                        <img class="img-fluid" src="" alt="slide3">
-                    </div>
-                    <div class="container">
-                        <h1>Kuliner Mahasiswa</h1>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="overlay-image">
-                        <img class="img-fluid" src="" alt="slide4">
-                    </div>
-                    <div class="container">
-                        <h1>Kuliner Mahasiswa</h1>
-                    </div>
+                <div class="container">
+                    <h1>Welcome to Kuliner Mahasiswa</h1>
                 </div>
             </div>
-
-            <a href="#banner" class="carousel-control-prev" role="button" data-slide="prev">
-                <span class="sr-only"></span>
+            <div class="carousel-item" data-bs-interval="3000">
+                <div class="overlay-image">
+                    <img class="img-fluid" src="images/sate-bandeng.jpg" alt="slide2">
+                </div>
+                <div class="container">
+                    <h1>Welcome to Kuliner Mahasiswa</h1>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#banner" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </a>
-            <a href="#banner" class="carousel-control-next" role="button" data-slide="next">
-                <span class="sr-only"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </a>
-
-            <ol class="carousel-indicators">
-                <li data-target="#banner"
-                    data-slide-to="0" class="active"></li>
-                <li data-target="#banner"
-                    data-slide-to="1"></li>
-                <li data-target="#banner"
-                    data-slide-to="2"></li>
-                <li data-target="#banner"
-                    data-slide-to="3"></li>
-            </ol>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
-
 
     <div class="row">
         <div class="col">
@@ -105,44 +80,50 @@
         </div>
     </div>
 
-    <div class="card-deck text-center">
-        <div class="card">
-            <img class="card-img-top" src="images/placeholder.png" alt="Makanan">
-            <div class="card-body">
-                <h5 class="card-title">Makanan</h5>
-                <a href="views/makanan.php?page=makanan" class="btn btn-outline-success stretched-link">Go to Makanan</a>
+    <div class="row text-center">
+        <div class="col">
+            <div class="card">
+                <img class="card-img-top" src="images/placeholder.png" alt="Makanan">
+                <div class="card-body">
+                    <a href="views/menu.php?page=makanan" class="btn btn-outline-success stretched-link">Go to Makanan</a>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <img class="card-img-top" src="images/placeholder.png" alt="Minuman">
-            <div class="card-body">
-                <h5 class="card-title">Minuman</h5>
-                <a href="views/minuman.php?page=minuman" class="btn btn-outline-success stretched-link">Go to Minuman</a>
+        <div class="col">
+            <div class="card">
+                <img class="card-img-top" src="images/placeholder.png" alt="Minuman">
+                <div class="card-body">
+                    <a href="views/menu.php?page=minuman" class="btn btn-outline-success stretched-link">Go to Minuman</a>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <img class="card-img-top" src="images/placeholder.png" alt="Tempat">
-            <div class="card-body">
-                <h5 class="card-title">Tempat</h5>
-                <a href="views/tempat.php?page=tempat" class="btn btn-outline-success stretched-link">Go to Tempat</a>
+        <div class="col">
+            <div class="card">
+                <img class="card-img-top" src="images/placeholder.png" alt="Tempat">
+                <div class="card-body">
+                    <a href="views/menu.php?page=tempat" class="btn btn-outline-success stretched-link">Go to Tempat</a>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <img class="card-img-top" src="images/placeholder.png" alt="Oleh-Oleh">
-            <div class="card-body">
-                <h5 class="card-title">Oleh-Oleh</h5>
-                <a href="views/oleholeh.php?page=oleholeh" class="btn btn-outline-success stretched-link">Go to Oleh-Oleh</a>
+        <div class="col">
+            <div class="card">
+                <img class="card-img-top" src="images/placeholder.png" alt="Oleh-Oleh">
+                <div class="card-body">
+                    <a href="views/menu.php?page=oleholeh" class="btn btn-outline-success stretched-link">Go to Oleh-Oleh</a>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <img class="card-img-top" src="images/placeholder.png" alt="Tentang Kami">
-            <div class="card-body">
-                <h5 class="card-title">Tentang Kami</h5>
-                <a href="views/tentangkami.php?page=tentangkami" class="btn btn-outline-success stretched-link">Go to Oleh-Oleh</a>
+        <div class="col">
+            <div class="card">
+                <img class="card-img-top" src="images/placeholder.png" alt="Tentang Kami">
+                <div class="card-body">
+                    <a href="views/menu.php?page=tentangkami" class="btn btn-outline-success stretched-link">Go to Tentang Kami</a>
+                </div>
             </div>
         </div>
     </div>
-    <br/><br/><br/><br/><br/>
+
+    <br/><br/><br/><br/><br/><br/><br/>
 </body>
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-dark">
@@ -150,19 +131,19 @@
         <a class="navbar-brand" href="index.php">Kuliner Mahasiswa</a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-                <a class="nav-link" href="views/makanan.php?page=makanan">Makanan</a>
+                <a class="nav-link" href="views/menu.php?page=makanan">Makanan</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="views/minuman.php?page=minuman">Minuman</a>
+                <a class="nav-link" href="views/menu.php?page=minuman">Minuman</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="views/tempat.php?page=tempat">Tempat</a>
+                <a class="nav-link" href="views/menu.php?page=tempat">Tempat</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="views/oleholeh.php?page=oleholeh">Oleh-Oleh</a>
+                <a class="nav-link" href="views/menu.php?page=oleholeh">Oleh-Oleh</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="views/tentangkami.php?page=tentangkami">Tentang Kami</a>
+                <a class="nav-link" href="views/menu.php?page=tentangkami">Tentang Kami</a>
             </li>
         </ul>
     </div>
