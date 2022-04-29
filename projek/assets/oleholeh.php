@@ -9,6 +9,12 @@
     .col-6 {
         padding: 5%;
     }
+    .active {
+        border-bottom: 3px solid #fff;
+    }
+    .nav-link:hover {
+        border-bottom: 1px solid #fff;
+    }
 </style>
 
 <body>
