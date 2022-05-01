@@ -25,6 +25,8 @@
         position:relative;
         padding-top:1%;
         background:peachpuff;
+    }
+    .scrolling {
         height:100%;
         overflow-y:scroll;
     }
@@ -40,7 +42,40 @@
         <div class="col-m-8">
             <?php
                 include '../process/searchbar.php';
+                while ($data = $stmt->fetch(PDO::FETCH_ASSOC)):
+                $nama = $data['nama'];
+                $deskripsi = $data['deskripsi'];
+                $foto;
+                if (file_exists($data['foto'])) {
+                    $foto = $data['foto'];
+                }
+                else {
+                    $foto = '../images/placeholder.png';
+                }
+                $kategori = $data['id_kategori'];
+                if ($submenu == "") {
+                    switch($kategori) {
+                        case "1": $submenu = "makanan"; break;
+                        case "2": $submenu = "minuman"; break;
+                        case "3": $submenu = "tempat"; break;
+                        case "4": $submenu = "oleholeh"; break;
+                        default: $submenu = ""; break;
+                    }
+                }
             ?>
+            <div class="row">
+                <div class="col-6">
+                    <h5><?= $nama; ?></h5>
+                    <img class="img-fluid" src="<?= $foto; ?>">
+                </div>
+                <div class="col-4">
+                    <div class="scrolling">
+                        <p><?= $deskripsi; ?></p>
+                    </div>
+                </div>
+            </div>
+            <?php endwhile; ?>
+            
         </div>
         <div class="col-m-4">
             <div class="card">
