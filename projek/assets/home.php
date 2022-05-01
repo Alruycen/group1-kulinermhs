@@ -73,7 +73,7 @@
             <h2 class="ml-1">Cari Kuliner di Tangerang</h2>
         </div>
         <div class="col text-right">
-            <form class="d-flex" action="views/artikel.php" method="post">
+            <form class="d-flex" action="views/artikel.php?page=" method="post">
                 <input class="form-control me-2" type="text" name="search" placeholder="Makanan khas Tangerang" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit" name="submit-search">Cari</button>
             </form>
