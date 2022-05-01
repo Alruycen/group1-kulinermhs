@@ -49,7 +49,7 @@
                             <h4 class="my-0 fw-normal">Rating & Review</h4>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="rating ulasan"></a>
+                            <a href="../views/rentangharga.php?page=makanan&action=read" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="rating ulasan"></a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                             <h4 class="my-0 fw-normal">Rentang Harga</h4>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="rentang harga"></a>
+                            <a href="../views/rentangharga.php?page=makanan&action=read" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="rentang harga"></a>
                         </div>
                     </div>
                 </div>
