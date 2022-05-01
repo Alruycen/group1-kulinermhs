@@ -1,4 +1,4 @@
-<form class="d-flex" action="../views/artikel.php" method="post">
+<form class="d-flex" action="../views/artikel.php?page=" method="post">
     <select class="form-select w-20" name="page">
         <option selected>...</option>
         <option value="1">Makanan</option>
