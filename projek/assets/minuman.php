@@ -42,7 +42,7 @@
                         <div class="card-header py-3">
                             <h4 class="my-0 fw-normal">Minuman viral</h4>
                         </div>
-                        <a href="#" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
+                        <a href="../views/artikel.php?page=minuman" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                         <div class="card-header py-3">
                             <h4 class="my-0 fw-normal">Rentang harga</h4>
                         </div>
-                        <a href="#" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
+                        <a href="../views/rentangharga.php?page=minuman&action=read" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -68,7 +68,7 @@
                         <div class="card-header py-3">
                             <h4 class="my-0 fw-normal">Rating & Review</h4>
                         </div>
-                        <a href="#" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
+                        <a href="../views/rentangharga.php?page=minuman&action=read" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
                     </div>
                 </div>
             </div>
