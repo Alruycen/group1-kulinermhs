@@ -1,30 +1,21 @@
-<title>Tempat</title>
+<title>Tentang Kami</title>
 <style>
-    .img-fluid {
-        width:100%;
-        margin-bottom: 5%;
-        height:10rem;
-        object-fit:cover;
-    }
     body {
-        padding:2.5% 5% 0 5%;
         background:#777;
     }
-    .list-group{
-        position: sticky;
-        top: 1%;
+    .col {
+        margin:5%;
+        background:blue;
     }
-    .col-sm-5 {
-        margin-right:7.6%;
-        max-height:20rem;
-        overflow-y:scroll;
+    .card-header {
+        background:black;
+        color:white;
     }
-    .col-sm-4 {
-        max-height:20rem;
-        overflow-y:scroll;
+    .col-6{
+        margin-right:5%;
     }
-    .dropdown-header {
-        margin-bottom:5%;
+    .row {
+        margin-top:5%;
     }
     .active {
         border-bottom: 3px solid #fff;
@@ -33,88 +24,47 @@
         border-bottom: 1px solid #fff;
     }
 </style>
-<body data-bs-spy="scroll" data-bs-target="#myScrollspy">
-    <img class="img-fluid" src="../images/sate-bandeng.jpg" alt="slide1">
+<body>
     <div class="row">
-        <div class="col-sm-2 bg-info" id="myScrollspy">
-            <btn class="btn d-block bg-white">Pilih</btn>
-            <div class="list-group">
-                <a class="list-group-item list-group-item-action active" href="#section1">Pasar Malam</a>
-                <a class="list-group-item list-group-item-action" href="#section2">Kafe</a>
-                <a class="list-group-item list-group-item-action" href="#section3">Restoran</a>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Tentang Kami</h1>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Form: Kritik dan Saran</div>
+                    <form action="#" method="post">
+                        <textarea class="form-control" name="tanggapan" rows="5"></textarea>
+                        <br/>
+                        <button type="submit" class="btn btn-block btn-outline-primary">Kirim</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="col-sm-5 bg-info">
+        <div class="col-5">
             <div class="card">
+                <div class="card-header">
+                    <h5>Para Pengembang</h5>
+                </div>
                 <div class="card-body">
-                    <div id="section1">
-                        <div id="section1">
-                        <?php
-                            include '../process/searchbar.php';
-                            while ($data = $stmt->fetch(PDO::FETCH_ASSOC)):
-                            $nama = $data['nama'];
-                            $deskripsi = $data['deskripsi'];
-                            $foto;
-                            if (file_exists($data['foto'])) {
-                                $foto = $data['foto'];
-                            }
-                            else {
-                                $foto = '../images/placeholder.png';
-                            }
-                            $kategori = $data['id_kategori'];
-                            if ($submenu == "") {
-                                switch($kategori) {
-                                    case "1": $submenu = "makanan"; break;
-                                    case "2": $submenu = "minuman"; break;
-                                    case "3": $submenu = "tempat"; break;
-                                    case "4": $submenu = "oleholeh"; break;
-                                    default: $submenu = ""; break;
-                                }
-                            }?>
-                            <div class="row">
-                                <h5><?= $nama; ?></h5>
-                                <img class="img-fluid" src="<?= $foto; ?>">
-                                <p><?= $deskripsi; ?></p>
-                            </div>
-                        <?php endwhile; ?>
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="#"><img class="img-fluid" src="../images/placeholder.png">Profil 1</a>
                         </div>
-		                <div id="section2">
+                        <div class="col-4">
+                            <a href="#"><img class="img-fluid" src="../images/placeholder.png">Profil 2</a>
                         </div>
-		                <div id="section3">
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="#"><img class="img-fluid" src="../images/placeholder.png">Profil 3</a>
+                        </div>
+                        <div class="col-4">
+                            <a href="#"><img class="img-fluid" src="../images/placeholder.png">Profil 4</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4 bg-black">
-            <?php
-                require 'formsearch.php';
-            ?>
-            <h6 class="bg-white">Rating dan Ulasan</h5>
         </div>
     </div>
 </body>
-<!--<div class="col-sm-6">
-            <div class="row row-cols-2">
-                <div class="col-md-4" id="myScrollspy">
-                    <btn class="btn d-block bg-white">Pilih</btn>
-                    <div class="list-group">
-                        <a class="list-group-item list-group-item-action active" href="#section1">Pasar Malam</a>
-                        <a class="list-group-item list-group-item-action" href="#section2">Kafe</a>
-                        <a class="list-group-item list-group-item-action" href="#section3">Restoran</a>
-                    </div>
-                </div>
-                <div class="col-md-8 bg-info">
-                    <div class="card">
-                        <div class="card-body">
-                            <div id="section1">
-				                <div id="section1">
-                                </div>
-			                    <div id="section2">
-                                </div>
-			                    <div id="section3">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
