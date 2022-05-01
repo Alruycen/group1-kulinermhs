@@ -16,11 +16,11 @@
     }
     .col-sm-5 {
         margin-right:7.6%;
-        max-height:16rem;
+        max-height:20rem;
         overflow-y:scroll;
     }
     .col-sm-4 {
-        max-height:16rem;
+        max-height:20rem;
         overflow-y:scroll;
     }
     .dropdown-header {
@@ -48,7 +48,35 @@
             <div class="card">
                 <div class="card-body">
                     <div id="section1">
-		                <div id="section1">
+                        <div id="section1">
+                        <?php
+                            include '../process/searchbar.php';
+                            while ($data = $stmt->fetch(PDO::FETCH_ASSOC)):
+                            $nama = $data['nama'];
+                            $deskripsi = $data['deskripsi'];
+                            $foto;
+                            if (file_exists($data['foto'])) {
+                                $foto = $data['foto'];
+                            }
+                            else {
+                                $foto = '../images/placeholder.png';
+                            }
+                            $kategori = $data['id_kategori'];
+                            if ($submenu == "") {
+                                switch($kategori) {
+                                    case "1": $submenu = "makanan"; break;
+                                    case "2": $submenu = "minuman"; break;
+                                    case "3": $submenu = "tempat"; break;
+                                    case "4": $submenu = "oleholeh"; break;
+                                    default: $submenu = ""; break;
+                                }
+                            }?>
+                            <div class="row">
+                                <h5><?= $nama; ?></h5>
+                                <img class="img-fluid" src="<?= $foto; ?>">
+                                <p><?= $deskripsi; ?></p>
+                            </div>
+                        <?php endwhile; ?>
                         </div>
 		                <div id="section2">
                         </div>
