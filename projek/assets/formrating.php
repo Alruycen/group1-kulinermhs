@@ -30,7 +30,7 @@
             <div class="container mt-5">
                 <div class="card text-center">
                     <div class="card-header">
-                        <h5><?= $data['nama']; ?></h5>
+                        <h5><?= $data['merek']; ?></h5>
                     </div>
                     <div class="card-body card-body-cascade">
                         <img src="<?= $foto; ?>" class="card-img-top">
