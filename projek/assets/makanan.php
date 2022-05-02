@@ -17,7 +17,6 @@
         padding: 0 5% 0 0;
     }
     .card-img-top {
-        width:20rem;
         height:12rem;
     }
     .active {
