@@ -6,19 +6,22 @@
         if(isset($_POST['submit-search'])) {
             switch($_POST['harga']) {
                 case "1": $harga = 50000;
-                    $sql2 = "SELECT a.id AS id_rentangharga, a.merek AS merek, a.lokasi AS lokasi, a.hargaminimal AS hargaminimal, a.hargamaksimal AS hargamaksimal, b.id = id_artikel, b.nama AS nama, b.foto AS foto FROM rentangharga a, artikel b WHERE a.id_artikel = b.id AND b.id_kategori = ? AND a.hargaminimal < ? AND (a.merek LIKE ? OR a.lokasi LIKE ? OR b.nama LIKE ?)";
+                    $sql = "SELECT a.id AS id_rating, a.rating AS rating, a.ulasan AS ulasan, a.tanggalditulis AS tanggalditulis, a.penulis AS penulis, b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.nama AS nama, c.foto AS foto FROM ratingulasan a, rentangharga b, artikel c WHERE a.id_artikel = b.id AND b.id_artikel = c.id AND c.id_kategori = ? AND b.hargaminimal < ? AND (b.merek LIKE ? OR b.lokasi LIKE ? OR c.nama LIKE ?)";
+                    $sql2 = "SELECT b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.nama AS nama, c.foto AS foto FROM rentangharga b, artikel c WHERE b.id_artikel = c.id AND c.id_kategori = ? AND b.hargaminimal < ? AND (b.merek LIKE ? OR b.lokasi LIKE ? OR c.nama LIKE ?)";
                     break;
                 case "2": $harga = 100000;
-                    $sql2 = "SELECT a.id AS id_rentangharga, a.merek AS merek, a.lokasi AS lokasi, a.hargaminimal AS hargaminimal, a.hargamaksimal AS hargamaksimal, b.id = id_artikel, b.nama AS nama, b.foto AS foto FROM rentangharga a, artikel b WHERE a.id_artikel = b.id AND b.id_kategori = ? AND a.hargaminimal <= ? AND (a.merek LIKE ? OR a.lokasi LIKE ? OR b.nama LIKE ?)";
+                    $sql = "SELECT a.id AS id_rating, a.rating AS rating, a.ulasan AS ulasan, a.tanggalditulis AS tanggalditulis, a.penulis AS penulis, b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.nama AS nama, c.foto AS foto FROM ratingulasan a, rentangharga b, artikel c WHERE a.id_artikel = b.id AND b.id_artikel = c.id AND c.id_kategori = ? AND b.hargaminimal <= ? AND (b.merek LIKE ? OR b.lokasi LIKE ? OR c.nama LIKE ?)";
+                    $sql2 = "SELECT b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.nama AS nama, c.foto AS foto FROM rentangharga b, artikel c WHERE b.id_artikel = c.id AND c.id_kategori = ? AND b.hargaminimal <= ? AND (b.merek LIKE ? OR b.lokasi LIKE ? OR c.nama LIKE ?)";
                     break;
                 case "3": $harga = 100000;
-                    $sql2 = "SELECT a.id AS id_rentangharga, a.merek AS merek, a.lokasi AS lokasi, a.hargaminimal AS hargaminimal, a.hargamaksimal AS hargamaksimal, b.id = id_artikel, b.nama AS nama, b.foto AS foto FROM rentangharga a, artikel b WHERE a.id_artikel = b.id AND b.id_kategori = ? AND a.hargaminimal > ? AND (a.merek LIKE ? OR a.lokasi LIKE ? OR b.nama LIKE ?)";
+                    $sql = "SELECT a.id AS id_rating, a.rating AS rating, a.ulasan AS ulasan, a.tanggalditulis AS tanggalditulis, a.penulis AS penulis, b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.nama AS nama, c.foto AS foto FROM ratingulasan a, rentangharga b, artikel c WHERE a.id_artikel = b.id AND b.id_artikel = c.id AND c.id_kategori = ? AND b.hargaminimal >= ? AND (b.merek LIKE ? OR b.lokasi LIKE ? OR c.nama LIKE ?)";
+                    $sql2 = "SELECT b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.nama AS nama, c.foto AS foto FROM rentangharga b, artikel c WHERE b.id_artikel = c.id AND c.id_kategori = ? AND b.hargaminimal > ? AND (b.merek LIKE ? OR b.lokasi LIKE ? OR c.nama LIKE ?)";
                     break;
                 default: $harga = 0;
-                    $sql2 = "SELECT a.id AS id_rentangharga, a.merek AS merek, a.lokasi AS lokasi, a.hargaminimal AS hargaminimal, a.hargamaksimal AS hargamaksimal, b.id = id_artikel, b.nama AS nama, b.foto AS foto FROM rentangharga a, artikel b WHERE a.id_artikel = b.id AND b.id_kategori = ? AND a.hargaminimal >= ? AND (a.merek LIKE ? OR a.lokasi LIKE ? OR b.nama LIKE ?)";
+                    $sql = "SELECT a.id AS id_rating, a.rating AS rating, a.ulasan AS ulasan, a.tanggalditulis AS tanggalditulis, a.penulis AS penulis, b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.nama AS nama, c.foto AS foto FROM ratingulasan a, rentangharga b, artikel c WHERE a.id_artikel = b.id AND b.id_artikel = c.id AND c.id_kategori = ? AND b.hargaminimal >= ? AND (b.merek LIKE ? OR b.lokasi LIKE ? OR c.nama LIKE ?)";
+                    $sql2 = "SELECT b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.nama AS nama, c.foto AS foto FROM rentangharga b, artikel c WHERE b.id_artikel = c.id AND c.id_kategori = ? AND b.hargaminimal > ? AND (b.merek LIKE ? OR b.lokasi LIKE ? OR c.nama LIKE ?)";
                     break;
             }       
-            $stmt2 = $conn->prepare($sql2);
             $kategori = $_POST['page'];
             switch($kategori) {
                 case "makanan": $kategori = 1; break;
@@ -28,11 +31,11 @@
                 default: $kategori =""; break;
             }
             $search = $_POST['search'];
-            $stmt2->execute([$kategori, $harga, "%$search%", "%$search%", "%$search%"]);
 
-            $sql = "SELECT a.rating AS rating, a.ulasan AS ulasan, a.tanggalditulis AS tanggalditulis, a.penulis AS penulis, b.merek AS merek FROM ratingulasan a, rentangharga b, artikel c WHERE a.id_artikel = b.id AND b.id_artikel = c.id AND c.id_kategori = ? AND (b.merek LIKE ? OR b.lokasi LIKE ? OR c.nama LIKE ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->execute([$kategori, "%$search%", "%$search%", "%$search%"]);
+            $stmt->execute([$kategori, $harga, "%$search%", "%$search%", "%$search%"]);
+            $stmt2 = $conn->prepare($sql2);
+            $stmt2->execute([$kategori, $harga, "%$search%", "%$search%", "%$search%"]);
         }
         else {
             if($_GET['action'] == "add") {
@@ -42,8 +45,9 @@
                 header('Location: ../index.php');
             }
             elseif($_GET['action']=="read") {
-                $sql = "SELECT a.rating AS rating, a.ulasan AS ulasan, a.tanggalditulis AS tanggalditulis, a.penulis AS penulis, b.merek AS merek FROM ratingulasan a, rentangharga b, artikel c WHERE a.id_artikel = b.id AND b.id_artikel = c.id AND c.id_kategori = ?";
-                $stmt = $conn->prepare($sql);
+                $sql = "SELECT a.id AS id_rating, a.rating AS rating, a.ulasan AS ulasan, a.tanggalditulis AS tanggalditulis, a.penulis AS penulis, b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.foto AS foto FROM ratingulasan a, rentangharga b, artikel c WHERE a.id_artikel = b.id AND b.id_artikel = c.id AND c.id_kategori = ?";
+                $sql2 = "SELECT b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.foto AS foto FROM rentangharga b, artikel c WHERE b.id_artikel = c.id AND c.id_kategori = ?";
+
                 $submenu = $_GET['page'];
                 switch($submenu) {
                     case "makanan": $submenu = "1"; break;
@@ -52,9 +56,9 @@
                     case "oleholeh": $submenu = "4"; break;
                     default: $submenu =""; break;
                 }
+                $stmt = $conn->prepare($sql);
                 $stmt->execute([$submenu]);
 
-                $sql2 = "SELECT a.id AS id_rentangharga, a.merek AS merek, a.lokasi AS lokasi, a.hargaminimal AS hargaminimal, a.hargamaksimal AS hargamaksimal, b.id AS id_artikel, b.foto AS foto FROM rentangharga a, artikel b WHERE a.id_artikel = b.id AND b.id_kategori = ?";
                 $stmt2 = $conn->prepare($sql2);
                 $stmt2->execute([$submenu]);
             }
