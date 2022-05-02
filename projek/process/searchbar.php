@@ -31,19 +31,19 @@
         else {
             switch($_GET['page']) {
                 case "makanan":
-                    $sql = "SELECT * FROM artikel WHERE id = 1";
+                    $sql = "SELECT * FROM artikel WHERE id_kategori = 1";
                     $submenu = "makanan";
                     break;
                 case "minuman":
-                    $sql = "SELECT * FROM artikel WHERE id = 2";
+                    $sql = "SELECT * FROM artikel WHERE id_kategori = 2";
                     $submenu = "minuman";
                     break;
                 case "tempat":
-                    $sql = "SELECT * FROM artikel WHERE id = 3";
+                    $sql = "SELECT * FROM artikel WHERE id_kategori = 3";
                     $submenu = "tempat";
                     break;
                 case "oleholeh":
-                    $sql = "SELECT * FROM artikel WHERE id = 4";
+                    $sql = "SELECT * FROM artikel WHERE id_kategori = 4";
                     $submenu = "oleholeh";
                     break;
                 default:
