@@ -1,5 +1,5 @@
 <?php
-    include '../process/menuinsert.php';
+    include '../process/proses_rating.php';
 ?>
 <style>
     .form {
@@ -36,7 +36,7 @@
             <?php endif; ?>
         </div>
         <div class="col">
-            <form class="form" action="../process/menuinsert.php?action=add" method="post">
+            <form class="form" action="../process/proses_rating.php?action=add" method="post">
                 <div class="form-control">
                     <label for="customRange2" class="form-label">Rating</label>
                     <input type="range" class="form-range" min="1" max="5" id="customRange2" name="rating" required>
