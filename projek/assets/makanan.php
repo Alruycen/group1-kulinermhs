@@ -79,7 +79,7 @@
             <div class="card">
                 <div class="card-body">
                     <?php
-                        require 'formsearch.php';
+                        require 'formartikel.php';
                     ?>
                     <ul>
                         <li><h5 class="card-title">Artikel Terbaru</h5></li>
