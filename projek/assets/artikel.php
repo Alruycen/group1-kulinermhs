@@ -1,104 +1,121 @@
 <style>
-    .col-m-8 {
-        max-width:66%;
-        padding-right:10%;
+    body {
+        background: #777;
+        overflow-x: clip;
     }
+
     .row {
         padding-left: 5%;
-        margin-bottom:5%;
+        margin-bottom: 5%;
     }
+
+    .col-m-8 {
+        padding-left: 5%;
+        padding-top: 5%;
+        max-width: 66%;
+    }
+
     .col-m-4 {
-        padding-top:1%;
-        max-width:30%;
+        padding-top: 5%;
+        padding-left: 10%;
+        max-width: 33%;
     }
+
     .row .row {
-        background:#777;
-        padding:5%;
+        background: peachpuff;
+        padding: 5%;
     }
+
     .col-6 {
-        background:white;
-        padding-right:5%;
+        padding-right: 5%;
     }
+
     .col-4 {
-        padding-left:5%;
-        margin-left:10%;
-        position:relative;
-        padding-top:1%;
-        background:peachpuff;
+        padding-left: 5%;
+        margin-left: 10%;
+        position: relative;
+        padding-top: 1%;
     }
+
     .scrolling {
-        height:100%;
-        overflow-y:scroll;
+        height: 16rem;
+        overflow-y: scroll;
     }
+
+    .card-img-top {
+        height: 12rem;
+    }
+
     .active {
         border-bottom: 3px solid #fff;
     }
+
     .nav-link:hover {
         border-bottom: 1px solid #fff;
     }
 </style>
+
 <body>
     <div class="row">
         <div class="col-m-8">
             <?php
-                include '../process/searchbar.php';
-                while ($data = $stmt->fetch(PDO::FETCH_ASSOC)):
+            include '../process/proses_artikel.php';
+            while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) :
                 $nama = $data['nama'];
                 $deskripsi = $data['deskripsi'];
                 $foto;
                 if (file_exists($data['foto'])) {
                     $foto = $data['foto'];
-                }
-                else {
+                } else {
                     $foto = '../images/placeholder.png';
                 }
-                $kategori = $data['id_kategori'];
-                if ($submenu == "") {
-                    switch($kategori) {
-                        case "1": $submenu = "makanan"; break;
-                        case "2": $submenu = "minuman"; break;
-                        case "3": $submenu = "tempat"; break;
-                        case "4": $submenu = "oleholeh"; break;
-                        default: $submenu = ""; break;
-                    }
-                }
             ?>
-            <div class="row">
-                <div class="col-6">
-                    <h5><?= $nama; ?></h5>
-                    <img class="img-fluid" src="<?= $foto; ?>">
-                </div>
-                <div class="col-4">
-                    <div class="scrolling">
-                        <p><?= $deskripsi; ?></p>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><?= $nama; ?></h5>
+                            </div>
+                        </div>
+                        <img class="card-img-top" src="<?= $foto; ?>">
+                    </div>
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="scrolling">
+                                <p><em><?= $deskripsi; ?></em></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php endwhile; ?>
-            
+
         </div>
         <div class="col-m-4">
             <div class="card">
                 <div class="card-body">
                     <?php
-                        require 'formsearch.php';
+                    require 'formsearch.php';
                     ?>
                     <ul>
-                        <li><h5 class="card-title">Artikel Terbaru</h5></li>
+                        <li>
+                            <h5 class="card-title">Artikel Terbaru</h5>
+                        </li>
                         <a class="card-link" href="#"><img class="card-img mb-2" src="../images/placeholder.png" alt="artikel terbaru"></a>
-                        <li><h5 class="card-title">Yang Paling Diminati</h5></li>
+                        <li>
+                            <h5 class="card-title">Yang Paling Diminati</h5>
+                        </li>
                         <a class="card-link" href="#"><img class="card-img mb-2" src="../images/placeholder.png" alt="yang paling diminati"></a>
                     </ul>
                     <h6 class="card-subtitle">Makanan khas</h6>
                     <ul>
-                        <li><a class ="card-link" href="#">Soto Betawi</a></li>
-                        <li><a class ="card-link" href="#">Sate</a></li>
+                        <li><a class="card-link" href="#">Soto Betawi</a></li>
+                        <li><a class="card-link" href="#">Sate</a></li>
                     </ul>
                     <h6 class="card-subtitle">Cari Jajanan?</h6>
-                    
+
                     <ul>
-                        <li><a class ="card-link" href="#">Cek di oleh-oleh khas</a></li>
-                        <li><a class ="card-link" href="#">Cek di tempat pasar malam</a></li>
+                        <li><a class="card-link" href="#">Cek di oleh-oleh khas</a></li>
+                        <li><a class="card-link" href="#">Cek di tempat pasar malam</a></li>
                     </ul>
                 </div>
             </div>
