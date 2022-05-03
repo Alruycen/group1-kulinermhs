@@ -38,35 +38,24 @@
             $stmt2->execute([$kategori, $harga, "%$search%", "%$search%", "%$search%"]);
         }
         else {
-            if($_GET['action'] == "add") {
-                $sql = "INSERT INTO ratingulasan (rating, ulasan, tanggalditulis, penulis, id_artikel) VALUES (?, ?, ?, ?, ?)";
-                $stmt = $conn->prepare($sql);   
-                $stmt->execute([$_POST['rating'], $_POST['ulasan'], $_POST['tanggalditulis'], $_POST['penulis'], $_POST['idartikel']]);
-                header('Location: ../index.php');
-            }
-            elseif($_GET['action']=="read") {
-                $sql = "SELECT a.id AS id_rating, a.rating AS rating, a.ulasan AS ulasan, a.tanggalditulis AS tanggalditulis, a.penulis AS penulis, b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.foto AS foto FROM ratingulasan a, rentangharga b, artikel c WHERE a.id_artikel = b.id AND b.id_artikel = c.id AND c.id_kategori = ?";
-                $sql2 = "SELECT b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.foto AS foto FROM rentangharga b, artikel c WHERE b.id_artikel = c.id AND c.id_kategori = ?";
+            $sql = "SELECT a.id AS id_rating, a.rating AS rating, a.ulasan AS ulasan, a.tanggalditulis AS tanggalditulis, a.penulis AS penulis, b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.foto AS foto FROM ratingulasan a, rentangharga b, artikel c WHERE a.id_artikel = b.id AND b.id_artikel = c.id AND c.id_kategori = ?";
+            $sql2 = "SELECT b.id AS id_rentangharga, b.merek AS merek, b.lokasi AS lokasi, b.hargaminimal AS hargaminimal, b.hargamaksimal AS hargamaksimal, c.id AS id_artikel, c.foto AS foto FROM rentangharga b, artikel c WHERE b.id_artikel = c.id AND c.id_kategori = ?";
 
-                $submenu = $_GET['page'];
-                switch($submenu) {
-                    case "makanan": $submenu = "1"; break;
-                    case "minuman": $submenu = "2"; break;
-                    case "tempat": $submenu = "3"; break;
-                    case "oleholeh": $submenu = "4"; break;
-                    default: $submenu =""; break;
-                }
-                $stmt = $conn->prepare($sql);
-                $stmt->execute([$submenu]);
-
-                $stmt2 = $conn->prepare($sql2);
-                $stmt2->execute([$submenu]);
+            $kategori = $_GET['page'];
+            switch($kategori) {
+                case "makanan": $kategori = "1"; break;
+                case "minuman": $kategori = "2"; break;
+                case "tempat": $kategori = "3"; break;
+                case "oleholeh": $kategori = "4"; break;
+                default: $kategori =""; break;
             }
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$kategori]);
+            $stmt2 = $conn->prepare($sql2);
+            $stmt2->execute([$kategori]);
         }
     }
     catch (Exception $e) {
         echo "<pre>";
         var_dump($e);
     }
-
-?>
