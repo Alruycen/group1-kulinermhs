@@ -2,6 +2,7 @@
 <style>
     body {
         background:#fff;
+        overflow-x:clip;
     }
     .carousel-item {
         height:24rem;
@@ -75,6 +76,7 @@
         <div class="col text-right">
             <form class="d-flex" action="views/artikel.php?page=" method="post">
                 <input class="form-control me-2" type="text" name="search" placeholder="Makanan khas Tangerang" aria-label="Search">
+                <input type="hidden" name="page" value="99">
                 <button class="btn btn-outline-success" type="submit" name="submit-search">Cari</button>
             </form>
         </div>
