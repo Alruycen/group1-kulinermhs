@@ -1,9 +1,5 @@
 <?php
-    include '../process/function.php';
-
-    $sql = "SELECT a.id AS id_rentangharga, a.merek AS merek, a.lokasi AS lokasi, a.hargaminimal AS hargaminimal, a.hargamaksimal AS hargamaksimal, b.id = id_artikel, b.nama AS nama, b.foto AS foto FROM rentangharga a, artikel b WHERE a.id_artikel = b.id AND a.id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute([$_GET['id']]);
+    include '../process/menuinsert.php';
 ?>
 <style>
     .form {
@@ -40,7 +36,7 @@
             <?php endif; ?>
         </div>
         <div class="col">
-            <form class="form" action="../process/ulasan.php?action=add" method="post">
+            <form class="form" action="../process/menuinsert.php?action=add" method="post">
                 <div class="form-control">
                     <label for="customRange2" class="form-label">Rating</label>
                     <input type="range" class="form-range" min="1" max="5" id="customRange2" name="rating" required>
