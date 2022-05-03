@@ -1,6 +1,6 @@
 <?php
     if(!$_GET['page']) {
-        $page = 'home';
+        $page = '';
     }
     else
         $page = $_GET['page'];
