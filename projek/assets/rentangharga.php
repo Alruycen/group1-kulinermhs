@@ -1,32 +1,41 @@
-<?php
-    include '../process/ulasan.php';
-?>
 <style>
+    body {
+        background: #777;
+        overflow-x: clip;
+    }
+
     .d-flex {
         padding: 5% 2.5% 5% 2.5%;
     }
+
     .col-md-8 {
-        max-width:66%;
-        margin-right:3%;
+        max-width: 66%;
+        margin-right: 3%;
     }
+
     .col-md-4 {
-        max-width:30%;
+        max-width: 30%;
     }
+
     .card-body {
-        overflow-y:scroll;
-        height:24rem;
+        overflow-y: scroll;
+        height: 24rem;
     }
+
     .card-img-top {
-        object-fit:cover;
-        height:12rem;
+        object-fit: cover;
+        height: 12rem;
     }
+
     .active {
         border-bottom: 3px solid #fff;
     }
+
     .nav-link:hover {
         border-bottom: 1px solid #fff;
     }
 </style>
+
 <body>
     <div class="row">
         <div class="col-md-8">
@@ -40,16 +49,17 @@
                     <h5>Rentang Harga</h5>
                 </div>
                 <div class="card-body">
-                    <?php $i = 0;
-                    while ($data2 = $stmt2->fetch()): 
-                        if(File_exists($data2['foto'])) {
+                    <?php 
+                    include '../process/proses_harga.php';
+                    $i = 0;
+                    while ($data2 = $stmt2->fetch()) :
+                        if (File_exists($data2['foto'])) {
                             $foto = $data2['foto'];
-                        }
-                        else {
-                            $foto ='../images/placeholder.png';
+                        } else {
+                            $foto = '../images/placeholder.png';
                         }
                         $i++;
-                        if($i % 2 == 1) echo "<div class='row row-cols-2'>"; ?>
+                        if ($i % 2 == 1) echo "<div class='row row-cols-2'>"; ?>
                         <div class="col">
                             <div class="card">
                                 <div class="card-header">
@@ -58,7 +68,7 @@
                                             <h6><?= $data2['merek']; ?></h6>
                                         </dt>
                                         <dd class="col">
-                                            <a class="btn btn-outline-info" href="../views/formrating.php?page=<?= $submenu2 = $_GET['page']; ?>&id=<?= $id = $data2['id_rentangharga']; ?>"><i data-feather="clipboard"></i>Berikan ulasan</a>
+                                            <a class="btn btn-outline-info" href="../views/formrating.php?page=<?= $kategori = $_GET['page']; ?>&id=<?= $id = $data2['id_rentangharga']; ?>&action=read"><i data-feather="clipboard"></i>Berikan ulasan</a>
                                         </dd>
                                     </dl>
                                 </div>
@@ -81,9 +91,9 @@
                                 </dl>
                             </div>
                         </div>
-                        <?php if($i % 2 == 0 && $i % 2 != 1) echo "</div>"; ?>
+                        <?php if ($i % 2 == 0 && $i % 2 != 1) echo "</div>"; ?>
                     <?php endwhile; ?>
-                    <?php if($i == 1) echo "</div>"; ?>
+                    <?php if ($i == 1) echo "</div>"; ?>
                 </div>
             </div>
         </div>
@@ -93,18 +103,18 @@
                     <h5>Rating & Review</h5>
                 </div>
                 <div class="card-body">
-                    <?php while ($data = $stmt->fetch()): ?>
-                        <dl class ="row row-cols-1">
+                    <?php while ($data = $stmt->fetch()) : ?>
+                        <dl class="row row-cols-1">
                             <h6><strong><?= $data['penulis']; ?></strong> memberikan ulasan <em><?= $data['merek']; ?></em></h6>
                             <dt class="col-4">
                                 <h6>Rating</h6>
                             </dt>
                             <dd class="col-8">
-                                <?php for($i = 0; $i < intval($data['rating']); $i++): ?>
+                                <?php for ($i = 0; $i < intval($data['rating']); $i++) : ?>
                                     <i data-feather="star"></i>
                                 <?php endfor; ?>
                             </dd>
-                                <p><?= $data['ulasan']; ?></p>
+                            <p><?= $data['ulasan']; ?></p>
                             <p><?= $data['tanggalditulis']; ?></em></p>
                         </dl>
                     <?php endwhile; ?>
@@ -114,7 +124,7 @@
     </div>
 
     <script>
-      feather.replace()
+        feather.replace()
     </script>
-    
+
 </body>
