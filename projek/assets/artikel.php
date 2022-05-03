@@ -94,7 +94,7 @@
             <div class="card">
                 <div class="card-body">
                     <?php
-                    require 'formsearch.php';
+                    require 'formartikel.php';
                     ?>
                     <ul>
                         <li>
