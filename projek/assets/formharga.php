@@ -1,4 +1,4 @@
-<form class="d-flex" action="../views/rentangharga.php?page=<?= $kategori = $_GET['page']; ?>" method="post">
+<form class="d-flex" action="../views/rentangharga.php?page=<?= $kategori = $_GET['page']; ?>" method="post" >
     <select class="form-select w-20" name="harga">
         <option selected value="99">...</option>
         <option value="1">Harga < Rp 50.000</option>
