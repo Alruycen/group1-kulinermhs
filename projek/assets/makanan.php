@@ -39,7 +39,7 @@
                             <h4 class="my-0 fw-normal">Makanan khas</h4>
                         </div>
                         <div class="card-body">
-                           <a href="../views/artikel.php?page=makanan" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="makanan khas"></a>
+                           <a href="../views/artikel.php?page=makanan&submenu=artikel" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="makanan khas"></a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                             <h4 class="my-0 fw-normal">Rating & Review</h4>
                         </div>
                         <div class="card-body">
-                            <a href="../views/rentangharga.php?page=makanan" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="rating ulasan"></a>
+                            <a href="../views/rentangharga.php?page=makanan&submenu=rentangharga" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="rating ulasan"></a>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                             <h4 class="my-0 fw-normal">Cari Restoran</h4>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="cari restoran"></a>
+                            <a href="../views/menu.php?page=tempat" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="cari restoran"></a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                             <h4 class="my-0 fw-normal">Rentang Harga</h4>
                         </div>
                         <div class="card-body">
-                            <a href="../views/rentangharga.php?page=makanan" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="rentang harga"></a>
+                            <a href="../views/rentangharga.php?page=makanan&submenu=rentangharga" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png" alt="rentang harga"></a>
                         </div>
                     </div>
                 </div>
@@ -89,14 +89,14 @@
                     </ul>
                     <h6 class="card-subtitle">Makanan khas</h6>
                     <ul>
-                        <li><a class ="card-link" href="#">Soto Betawi</a></li>
-                        <li><a class ="card-link" href="#">Sate</a></li>
+                        <li><p>Soto Betawi</p></li>
+                        <li><p>Sate</p></li>
                     </ul>
                     <h6 class="card-subtitle">Cari Jajanan?</h6>
                     
                     <ul>
-                        <li><a class ="card-link" href="#">Cek di oleh-oleh khas</a></li>
-                        <li><a class ="card-link" href="#">Cek di tempat pasar malam</a></li>
+                        <li><a class ="card-link" href="../views/menu.php?page=oleholeh">Cek di oleh-oleh khas</a></li>
+                        <li><a class ="card-link" href="../views/menu.php?page=tempat">Cek di tempat pasar malam</a></li>
                     </ul>
                 </div>
             </div>
