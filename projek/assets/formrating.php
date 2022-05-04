@@ -12,6 +12,7 @@
         border-bottom: 1px solid #fff;
     }
 </style>
+<title>Form Rating</title>
 <body>
     <div class="row">
         <div class="col">
