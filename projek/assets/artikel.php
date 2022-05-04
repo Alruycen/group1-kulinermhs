@@ -1,3 +1,4 @@
+<title>Artikel</title>
 <style>
     body {
         background: #777;
