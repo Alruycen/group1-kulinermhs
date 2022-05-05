@@ -2,6 +2,7 @@
 <style>
     body {
         background:#777;
+        overflow-x:clip;
     }
     .col {
         margin:5%;
@@ -33,10 +34,10 @@
                 </div>
                 <div class="card-body">
                     <div class="card-title">Form: Kritik dan Saran</div>
-                    <form action="#" method="post">
+                    <form action="../process/proses_tentangkami.php" method="post">
                         <textarea class="form-control" name="tanggapan" rows="5"></textarea>
                         <br/>
-                        <button type="submit" class="btn btn-block btn-outline-primary">Kirim</button>
+                        <button type="submit" class="btn btn-block btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Kirim</button>
                     </form>
                 </div>
             </div>
