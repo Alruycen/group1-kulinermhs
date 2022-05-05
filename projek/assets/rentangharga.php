@@ -1,3 +1,4 @@
+<title>Rentang Harga</title>
 <style>
     body {
         background: #777;
