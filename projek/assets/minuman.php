@@ -35,7 +35,7 @@
                         <div class="card-header py-3">
                             <h4 class="my-0 fw-normal">Resep</h4>
                         </div>
-                        <a href="#" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
+                        <a href="../views/resep.php?page=minuman&submenu=resep" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -43,7 +43,7 @@
                         <div class="card-header py-3">
                             <h4 class="my-0 fw-normal">Minuman viral</h4>
                         </div>
-                        <a href="../views/artikel.php?page=minuman" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
+                        <a href="../views/artikel.php?page=minuman&submenu=artikel" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                         <div class="card-header py-3">
                             <h4 class="my-0 fw-normal">Minuman khas</h4>
                         </div>
-                        <a href="../views/artikel.php?page=minuman" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
+                        <a href="../views/artikel.php?page=minuman&submenu=artikel" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -61,7 +61,7 @@
                         <div class="card-header py-3">
                             <h4 class="my-0 fw-normal">Rentang harga</h4>
                         </div>
-                        <a href="../views/rentangharga.php?page=minuman" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
+                        <a href="../views/rentangharga.php?page=minuman&submenu=rentangharga" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -69,35 +69,15 @@
                         <div class="card-header py-3">
                             <h4 class="my-0 fw-normal">Rating & Review</h4>
                         </div>
-                        <a href="../views/rentangharga.php?page=minuman" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
+                        <a href="../views/rentangharga.php?page=minuman&submenu=rentangharga" class="stretched-link"><img class="card-img-top" src="../images/placeholder.png"></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-m-4">
-            <div class="card">
-                <div class="card-body">
-                    <?php
-                        require 'formartikel.php';
-                    ?>
-                    <ul>
-                        <li><h5 class="card-title">Artikel Terbaru</h5></li>
-                        <a class="card-link" href="#"><img class="card-img mb-2" src="../images/placeholder.png" alt="artikel terbaru"></a>
-                        <li><h5 class="card-title">Yang Paling Diminati</h5></li>
-                        <a class="card-link" href="#"><img class="card-img mb-2" src="../images/placeholder.png" alt="yang paling diminati"></a>
-                    </ul>
-                    <h6 class="card-subtitle">Minuman khas</h6>
-                    <ul>
-                        <li><a class ="card-link" href="#">Es kuwut</a></li>
-                        <li><a class ="card-link" href="#">Bir pletok</a></li>
-                    </ul>
-                    <h6 class="card-subtitle">Cari tempat nongkrong?</h6>
-                    
-                    <ul>
-                        <li><a class ="card-link" href="#">Cek di tempat kafe</a></li>
-                    </ul>
-                </div>
-            </div>
+            <?php 
+            include '../process/proses_artikel.php';
+            include '../assets/sidebar.php'; ?>
         </div>
     </div>
 </body>
