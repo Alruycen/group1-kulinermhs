@@ -76,30 +76,9 @@
             </div>
         </div>
         <div class="col-m-4">
-            <div class="card">
-                <div class="card-body">
-                    <?php
-                        require 'formartikel.php';
-                    ?>
-                    <ul>
-                        <li><h5 class="card-title">Artikel Terbaru</h5></li>
-                        <a class="card-link" href="#"><img class="card-img mb-2" src="../images/placeholder.png" alt="artikel terbaru"></a>
-                        <li><h5 class="card-title">Yang Paling Diminati</h5></li>
-                        <a class="card-link" href="#"><img class="card-img mb-2" src="../images/placeholder.png" alt="yang paling diminati"></a>
-                    </ul>
-                    <h6 class="card-subtitle">Makanan khas</h6>
-                    <ul>
-                        <li><p>Soto Betawi</p></li>
-                        <li><p>Sate</p></li>
-                    </ul>
-                    <h6 class="card-subtitle">Cari Jajanan?</h6>
-                    
-                    <ul>
-                        <li><a class ="card-link" href="../views/menu.php?page=oleholeh">Cek di oleh-oleh khas</a></li>
-                        <li><a class ="card-link" href="../views/menu.php?page=tempat">Cek di tempat pasar malam</a></li>
-                    </ul>
-                </div>
-            </div>
+            <?php 
+            include '../process/proses_artikel.php';
+            include '../assets/sidebar.php'; ?>
         </div>
     </div>
 </body>
