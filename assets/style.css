@@ -1,0 +1,22 @@
+    body {
+        background: #777;
+        overflow-x: clip;
+    }
+
+    img {
+        object-fit:cover;
+        image-rendering: -webkit-optimize-contrast;
+    }
+
+    .active {
+        border-bottom: 3px solid #fff;
+    }
+
+    .nav-link:hover {
+        border-bottom: 1px solid #fff;
+    }
+
+    .scrolling {
+        overflow-y: scroll;
+        overflow-x: clip;
+    }

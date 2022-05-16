@@ -1,0 +1,1 @@
+Untuk table users, rolenya harus diset secara manual di database, alasannya karena users yang login dalam web kulinermahasiswa akan menjadi admin, sementara kita tidak ingin pengguna bisa dengan bebas mengubah data di dalam, sehingga hanya setelah diakui kemudian diset, maka users dapat login di website.
