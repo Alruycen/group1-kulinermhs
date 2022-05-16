@@ -25,4 +25,10 @@
 ## Di bagian role, ubah bagian yang kosong menjadi admin dan pencet GO
 ## Setelah itu, refresh website kulinermahasiswa dan login dengan password yang dibatasi 11 digit (disarankan pakai NIM)
 
+# Fungsi Role Admin:
+
+## Menambah data baru yang ada di setiap menu
+## Mengubah data yang sudah ada di setiap menu
+## Menjadi wajah di menu tentangkami
+
 # Catatan berakhir di sini.
