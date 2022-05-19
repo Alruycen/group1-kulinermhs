@@ -24,7 +24,6 @@
                             mkdir('../images/');
                         }
                         move_uploaded_file($sumber, $tujuan);
-
                         resize_image($tujuan, $ext, "500");
                     }
                     $sql = "INSERT INTO artikel (nama, deskripsi, foto, tanggalditulis, penulis, id_kategori)

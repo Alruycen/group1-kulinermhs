@@ -83,62 +83,6 @@ try {
         </div>
     </div>
     <div class="col">
-<?php
-
-function resize_image ($file, $ext, $max_resolution) {
-    if(file_exists($file)) {
-        switch($ext) {
-            case "jpg":
-            case "jpeg":
-                $original_image = imagecreatefromjpeg($file);
-                break;
-            case "png":
-                $original_image = imagecreatefrompng($file);
-                break;
-            default:
-                die("Jenis foto ini tidak didukung.");
-        }
-        $original_width = imagesx($original_image);
-        $original_height = imagesy($original_image);
-
-        $ratio = $max_resolution / $original_width;
-        $new_width = $max_resolution;
-        $new_height = $original_height * $ratio;
-
-        if($new_height > $max_resolution) {
-            $ratio = $max_resolution / $original_height;
-            $new_height = $max_resolution;
-            $new_width = $original_width * $ratio;
-        }
-
-        if($original_image) {
-            $new_image = imagecreatetruecolor($new_width, $new_height);
-            imagecopyresampled($new_image, $original_image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
-            $ext == "png" ? imagepng($new_image, $file, 90) : imagejpeg($new_image, $file, 90);
-        }
-    }
-}
-if($_SERVER['REQUEST_ METHOD'] == "POST") {
-    if(isset($_FILES['foto'])) {
-        $foto = $_FILES['foto'];
-        $ext = explode('.', $foto['name']);
-        $ext = end($ext);
-        $ext = strtolower($ext);
-        //echo $ext;
-        $extboleh = ['jpg', 'png', 'jpeg'];
-        if(in_array($ext, $extboleh)) {
-            $sumber = $foto['tmp_name'];
-            $tujuan = 'images/'.$foto['name'];
-            if(!file_exists('images/')) {
-                mkdir('images/');
-            }
-            move_uploaded_file($sumber, $tujuan);
-
-            resize_image($tujuan, $ext, "500");
-        }
-    }
-}
-?>
         <form class="form" action="process/proses_artikel.php?page=<?= $page = $_GET['kategori']; ?>&action=<?= $action; ?>" method="post" enctype="multipart/form-data">
             <div class="form-control">
                 <label for="exampleFormControlInput1" class="form-label">Nama</label>
