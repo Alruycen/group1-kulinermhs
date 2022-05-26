@@ -3,7 +3,13 @@
     require 'process/proses_artikel.php';
 
 ?>
-<div class="card">
+<style>
+    #sidebar {
+        background: #d9e4ec;
+    }
+</style>
+
+<div class="card" id="sidebar">
     <div class="card-body">
         <?php require 'formartikel.php'; ?>
         <ul>

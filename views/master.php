@@ -1,14 +1,14 @@
 <?php
-    if(!isset($_GET['page'])) { 
-        $page = 'home';
-    }
-    else {
-        $page = $_GET['page'];
-    }
+if (!isset($_GET['page'])) {
+    $page = 'home';
+} else {
+    $page = $_GET['page'];
+}
 ?>
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,17 +17,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link href="assets/style.css" rel="stylesheet" />
     <title>Kuliner Mahasiswa - <?= $page; ?></title>
-  </head>
-  <body>
+</head>
+
+<body>
+    <style>
+        body {
+            background: #d9e4ec;
+            padding-bottom: 10%;
+        }
+    </style>
     <main>
-    <?php
-        require 'views/'.$page.'.php';
-    ?>
+        <?php
+        require 'views/' . $page . '.php';
+        ?>
     </main>
     <footer>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom bg-dark">
             <div class="container-fluid">
-                    <?php include 'process/activenavbar.php'; ?>
+                <?php include 'process/activenavbar.php'; ?>
             </div>
         </nav>
     </footer>
@@ -36,8 +43,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
-        feather.replace(); 
+        feather.replace();
     </script>
-  </body>
-  
+</body>
+
 </html>

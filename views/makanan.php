@@ -17,6 +17,7 @@
 
     .card-img-top {
         height: 12rem;
+        background: #6aabd2
     }
 </style>
 <div class="row">

@@ -6,6 +6,7 @@
     }
     .card-img-top {
         height: 12rem;
+        background: #6aabd2;
     }
 
     .col-m-4 {

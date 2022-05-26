@@ -1,7 +1,7 @@
 <form class="d-flex" action="index.php" method="get" >
     <input type="hidden" name="page" value="rentangharga">
     <input type="hidden" name="kategori" value="<?= $kategori = $_GET['kategori']; ?>">
-    <select class="form-select w-20" name="harga">
+    <select class="form-control w-20" name="harga">
         <option selected value="" label="Pilih Terserah"/>
         <option value="1" label="Harga < Rp 50.000" />
         <option value="2" label="Harga <= Rp 100.000" />

@@ -9,7 +9,12 @@
     .col-6 {
         padding: 5%;
     }
-
+    .col-6 .card-body {
+        background: #6aabd2;
+    }
+    .col-6 .card {
+        background: #d9e4ec;
+    }
     .card-header {
         height: 4rem;
     }
@@ -20,6 +25,9 @@
 
     .scrolling {
         height: 8rem;
+    }
+    .scrolling::-webkit-scrollbar {
+        display: none;
     }
 </style>
 

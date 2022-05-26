@@ -18,7 +18,7 @@
     }
 
     .row .row {
-        background: peachpuff;
+        background: #6aabd2;
         padding: 5%;
     }
 
@@ -33,11 +33,17 @@
 
     .scrolling {
         height: 12rem;
+        background: #d9e4ec;
     }
 
     .card-img-top {
         height: 12rem;
     }
+
+    #sidebar {
+        background: #d9e4ec;
+    }
+
 </style>
 
 
@@ -93,7 +99,7 @@
         endif; ?>
     </div>
     <div class="col-m-4">
-        <div class="card">
+        <div class="card" id="sidebar">
             <div class="card-body">
                 <?php
                 require 'formresep.php';

@@ -3,6 +3,7 @@
     require 'process/proses_harga.php';
 ?>
 <style>
+
     .d-flex {
         padding: 5% 2.5% 5% 2.5%;
     }
@@ -11,9 +12,20 @@
         max-width: 66%;
         margin-right: 3%;
     }
+    .col-md-8 .card {
+        background: #d9e4ec;
+    }
+
+    .col-md-8 .card-body {
+        background: #6aabd2;
+    }
 
     .col-md-4 {
         max-width: 30%;
+    }
+
+    .col-md-8 .card .card {
+        background: #d9e4ec;
     }
 
     .card-body {
@@ -104,7 +116,9 @@
                 if (isset($stmt)) :
                     while ($data = $stmt->fetch()) : ?>
                         <dl class="row row-cols-1">
-                            <h6><strong><?= $data['penulis']; ?></strong> memberikan ulasan <em><?= $data['merek']; ?></em></h6>
+                            <div class="card-header">
+                                <h6><strong><?= $data['penulis']; ?></strong> memberikan ulasan <em><?= $data['merek']; ?></em></h6>
+                            </div>
                             <dt class="col-4">
                                 <h6>Rating</h6>
                             </dt>
@@ -113,8 +127,12 @@
                                     <i data-feather="star"></i>
                                 <?php endfor; ?>
                             </dd>
-                            <p><?= $data['ulasan']; ?></p>
-                            <p><?= $data['tanggalditulis']; ?></em></p>
+                            <blockquote class="blockquote">
+                                <p>"<?= $data['ulasan']; ?>"</p>
+                            </blockquote>
+                            <div class="card-footer">
+                                <p><?= $data['tanggalditulis']; ?></em></p>
+                            </div>
                         </dl>
                 <?php endwhile;
                 endif; ?>

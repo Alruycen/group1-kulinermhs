@@ -20,23 +20,26 @@
     }
 
     .row .row {
-        background: peachpuff;
+        background: #6aabd2;
         padding: 5%;
     }
 
     .col-6 {
-        padding-right: 5%;
+        margin-right: 10%;
     }
 
     .col-4 {
-        padding-left: 5%;
-        margin-left: 10%;
         position: relative;
-        padding-top: 1%;
+        background: #d9e4ec;
+
+    }
+    .scrolling::-webkit-scrollbar {
+        display: none;
     }
 
     .scrolling {
         height: 16rem;
+        background: #d9e4ec;
     }
 
     .card-img-top {
@@ -70,7 +73,7 @@
                     <div class="col-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5><?= $nama; ?></h5>
+                                <h3><?= $nama; ?></h3>
                             </div>
                         </div>
                         <img class="card-img-top" src="<?= $foto; ?>" loading="lazy">

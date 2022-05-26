@@ -1,7 +1,4 @@
 <style>
-    body {
-        background:#fff;
-    }
     .carousel-item {
         height:24rem;
         background:#777;
@@ -65,7 +62,7 @@
                     <img class="img-fluid" src="<?= $foto; ?>" alt="slide<?= $i; ?>">
                 </div>
                 <div class="container">
-                    <h1>Welcome to Kuliner Mahasiswa</h1>
+                    <h1 class="display-4">Welcome to Kuliner Mahasiswa</h1>
                 </div>
             </div>
             <?php 
@@ -78,7 +75,7 @@
                     <img class="img-fluid" src="" alt="slide1">
                 </div>
                 <div class="container">
-                    <h1>Welcome to Kuliner Mahasiswa</h1>
+                    <h1 class="display-1">Welcome to Kuliner Mahasiswa</h1>
                 </div>
             </div>
             <?php endif; ?>
@@ -104,7 +101,7 @@
 
     <div class="row">
         <div class="col">
-            <h2 class="ml-1">Cari Kuliner di Tangerang</h2>
+            <h2 class="ms-3">Cari Kuliner di Tangerang</h2>
         </div>
         <div class="col text-right">
             <form class="d-flex" action="index.php" method="get">
@@ -161,7 +158,6 @@
         </div>
     </div>
 
-    <br/><br/><br/><br/><br/><br/><br/>
     <script>
         function showHint(str) {
             var xhttp;
