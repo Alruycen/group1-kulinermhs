@@ -20,10 +20,75 @@ if (!isset($_GET['page'])) {
 </head>
 
 <body>
+    <!-- 
+        #e5e8e8 white
+        #8d9797 pewter
+        #4e545c gunmental gray
+        #000401 jetblack
+        -->
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        [class *="col-"] {
+            width: 100%;
+            
+        }
+
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .col-s-1 {width: 8.33%;}
+            .col-s-2 {width: 16.66%;}
+            .col-s-3 {width: 25%;}
+            .col-s-4 {width: 33.33%;}
+            .col-s-5 {width: 41.66%;}
+            .col-s-6 {width: 50%;}
+            .col-s-7 {width: 58.33%;}
+            .col-s-8 {width: 66.66%;}
+            .col-s-9 {width: 75%;}
+            .col-s-10 {width: 83.33%;}
+            .col-s-11 {width: 91.66%;}
+            .col-s-12 {width: 100%;}
+        }
+
+        @media only screen and (min-width: 992px) {
+            /* For desktop: */
+            .col-1 {width: 8.33%;}
+            .col-2 {width: 16.66%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+        }
+
         body {
-            background: #d9e4ec;
+            background: #e5e8e8;
             padding-bottom: 10%;
+        }
+
+        img {
+            object-fit: cover;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        .active {
+            border-bottom: 3px solid #e5e8e8;
+        }
+
+        .nav-link:hover {
+            border-bottom: 1px solid #e5e8e8;
+        }
+
+        .scrolling {
+            overflow-y: scroll;
+            overflow-x: clip;
         }
     </style>
     <main>

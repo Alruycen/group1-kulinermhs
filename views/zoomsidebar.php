@@ -14,13 +14,13 @@
     $stmt2->execute([$id]);
 ?>
 <style>
-    body {
-        background: #777;
-        overflow-x: clip;
-    }
 
     .form {
         margin-top: 10%;
+    }
+
+    .card {
+        background: #d9e4ec;
     }
 
     .card-body-cascade {
@@ -60,7 +60,7 @@
             } else {
                 $foto = '';
             } ?>
-    <div class="col-sm-8">
+    <div class="col-8">
         <div class="container mt-5">
             <div class="card text-center">
                 <div class="card-header">
@@ -77,7 +77,7 @@
     </div>
     <?php
         endwhile; endif;?>
-    <div class="col-sm-4">
+    <div class="col-4">
         <?php
         include 'sidebar.php'; ?>
     </div>

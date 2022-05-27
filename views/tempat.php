@@ -3,30 +3,42 @@ include 'views/admin.php';
 require 'process/proses_tempat.php';
 ?>
 <style>
+
+    body{
+        overflow-y:scroll;
+    }
+    @media only screen and (min-width: 600px) {
+        /* For tablets: */
+        body { overflow-y: scroll; }
+    }
+    @media only screen and (min-width: 992px) {
+        /* For desktop: */
+        body { overflow-y: clip; }
+    }
     .img-fluid {
         width: 100%;
-        margin:2% 0 5% 0;
+        margin: 2% 0 5% 0;
         padding: 0 2% 0 2%;
-        height: 10rem;
+        max-height: 10rem;
+    }
+
+    #body1 {
+        margin: 0 3% 5% 3%;
+        position: relative;
+        max-height: 20rem;
+        overflow-y: scroll;
+        background: #6aabd2;
+        
+    }
+
+    #body1 .col-4 {
+        margin: 5% 0 0 0;
+        overflow-y: clip;
     }
 
     .list-group {
         position: sticky;
         top: 2%;
-    }
-
-    .col-sm-8 {
-        margin:0 5% 0 3%;
-        max-width: 55%;
-        position: relative;
-        max-height: 20rem;
-        overflow-y: scroll;
-        background: #6aabd2;
-    }
-
-    .col-sm-8 .col-md-4 {
-        max-width: 30%;
-        margin: 5% 1% 0 1%;
     }
 
     #judulscroll {
@@ -38,20 +50,28 @@ require 'process/proses_tempat.php';
         border-radius: 1rem;
     }
 
-    .col-sm-8 .card {
+    #body1 .card {
         background: #d9e4ec;
         margin-top: 5%;
         margin-bottom: 5%;
     }
 
-    .col-sm-4 {
-        max-width: 40%;
+    #body1 dt p {
+        padding-left: 5%;
+    }
+
+    #body1 dd a {
+        float: right;
+    }
+
+    #body2 {
         max-height: 20rem;
         overflow-y: scroll;
         background: #6aabd2;
+        margin-bottom: 5%;
     }
 
-    .col-sm-4 form{ 
+    #body2 form {
         margin-top: 5%;
         margin-bottom: 5%;
         position: sticky;
@@ -59,12 +79,20 @@ require 'process/proses_tempat.php';
         z-index: 1;
     }
 
+    #body2 a {
+        float: right;
+    }
+
     .card-img-top {
-        height: 8rem;
+        max-height: 8rem;
     }
 
     .dropdown-header {
         margin-bottom: 5%;
+    }
+
+    form select {
+        margin-right: 1%;
     }
 
     .btn-outline-success {
@@ -81,10 +109,10 @@ if (isset($stmtbanner)) {
 
 ?>
 <img class="img-fluid" src="images/<?= $banner['foto']; ?>" alt="slide1">
-<div class="row row-cols-2">
-    <div class="col-sm-8" data-bs-spy="scroll" data-bs-offset="10" data-bs-target="#myScrollspy">
+<div class="row">
+    <div class="col-7 col-s-12" id="body1" data-bs-spy="scroll" data-bs-offset="5" data-bs-target="#myScrollspy">
         <div class="row">
-            <div class="col-md-4" id="myScrollspy">
+            <div class="col-4 col-s-6" id="myScrollspy">
                 <btn class="btn d-block bg-white" id="judulscroll">Pilih</btn>
                 <div class="list-group" id="isiscroll">
                     <a class="list-group-item list-group-item-action active" href="#section1">Pasar Malam</a>
@@ -92,7 +120,7 @@ if (isset($stmtbanner)) {
                     <a class="list-group-item list-group-item-action" href="#section3">Restoran</a>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-8 col-s-6">
                 <div class="card">
                     <div class="card-body">
                         <div id="section1">
@@ -104,54 +132,56 @@ if (isset($stmtbanner)) {
                                     <p><?= $data['deskripsi']; ?></p>
                                 </div>
                                 <?php endif;
-                            while ($data = $stmtpasar->fetch(PDO::FETCH_ASSOC)) :
-                                $i++;
-                                $nama = $data['nama'];
-                                $deskripsi = $data['deskripsi'];
-                                $foto;
-                                if (file_exists('images/' . $data['foto'])) {
-                                    $foto = 'images/' . $data['foto'];
-                                } else {
-                                    $foto = 'images/placeholder.png';
-                                }
-                                if ($i == 1) : ?>
-                                    <h6>Pasar Malam di Tangerang</h6>
-                                <?php endif; ?>
-                                <div class="card">
-                                    <div class="card-header">
+                            if (isset($stmtpasar)) :
+                                while ($data = $stmtpasar->fetch(PDO::FETCH_ASSOC)) :
+                                    $i++;
+                                    $nama = $data['nama'];
+                                    $deskripsi = $data['deskripsi'];
+                                    $foto;
+                                    if (file_exists('images/' . $data['foto'])) {
+                                        $foto = 'images/' . $data['foto'];
+                                    } else {
+                                        $foto = 'images/placeholder.png';
+                                    }
+                                    if ($i == 1) : ?>
+                                        <h6>Pasar Malam di Tangerang</h6>
+                                    <?php endif; ?>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <dl class="row">
+                                                <dt class="col">
+                                                    <h6><?= $data['merek']; ?></h6>
+                                                </dt>
+                                                <dd class="col">
+                                                    <a class="btn btn-outline-info" href="index.php?page=formrating&page2=tempat&kategori=<?= $kategori = $_GET['page']; ?>&id=<?= $id = $data['id_rentangharga']; ?>&action=read"><i data-feather="clipboard"></i>Berikan ulasan</a>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <img src="<?= $foto; ?>" class="card-img-top" loading="lazy">
                                         <dl class="row">
                                             <dt class="col">
-                                                <h6><?= $data['merek']; ?></h6>
+                                                <p><strong>Harga</strong></p>
                                             </dt>
                                             <dd class="col">
-                                                <a class="btn btn-outline-info" href="index.php?page=formrating&page2=tempat&kategori=<?= $kategori = $_GET['page']; ?>&id=<?= $id = $data['id_rentangharga']; ?>&action=read"><i data-feather="clipboard"></i>Berikan ulasan</a>
+                                                <p>Rp <em><?= $data['hargaminimal']; ?></em>-<em><?= $data['hargamaksimal']; ?></em></p>
                                             </dd>
                                         </dl>
+                                        <dl class="row">
+                                            <dt class="col">
+                                                <p><strong>Lokasi</strong></p>
+                                            </dt>
+                                            <dd class="col">
+                                                <p><?= $data['lokasi']; ?></p>
+                                            </dd>
+                                        </dl>
+                                        <?php
+                                        if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") : ?>
+                                            <a href="index.php?page=edittempat&kategori=<?= $kategori; ?>&id=<?= $data['id_rentangharga']; ?>&id2=<?= $id2 = $data['id_artikel']; ?>&action=edit" class="btn btn-warning btn-sm">
+                                                <span data-feather="edit"></span>Ubah Data <em><?= $data['merek']; ?></em></a>
+                                        <?php endif; ?>
                                     </div>
-                                    <img src="<?= $foto; ?>" class="card-img-top" loading="lazy">
-                                    <dl class="row">
-                                        <dt class="col-3">
-                                            <p><strong>Harga</strong></p>
-                                        </dt>
-                                        <dd class="col-9">
-                                            <p>Rp <em><?= $data['hargaminimal']; ?></em>-<em><?= $data['hargamaksimal']; ?></em></p>
-                                        </dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-3">
-                                            <p><strong>Lokasi</strong></p>
-                                        </dt>
-                                        <dd class="col-9">
-                                            <p><?= $data['lokasi']; ?></p>
-                                        </dd>
-                                    </dl>
-                                    <?php
-                                    if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") : ?>
-                                        <a href="index.php?page=edittempat&kategori=<?= $kategori; ?>&id=<?= $data['id_rentangharga']; ?>&id2=<?= $id2 = $data['id_artikel']; ?>&action=edit" class="btn btn-warning btn-sm">
-                                            <span data-feather="edit"></span>Ubah Data <em><?= $data['merek']; ?></em></a>
-                                    <?php endif; ?>
-                                </div>
-                            <?php endwhile; ?>
+                            <?php endwhile;
+                            endif; ?>
                         </div>
                         <div id="section2">
                             <?php $i = 0;
@@ -161,54 +191,56 @@ if (isset($stmtbanner)) {
                                     <p><?= $data['deskripsi']; ?></p>
                                 </div>
                                 <?php endif;
-                            while ($data = $stmtkafe->fetch(PDO::FETCH_ASSOC)) :
-                                $i++;
-                                $nama = $data['nama'];
-                                $deskripsi = $data['deskripsi'];
-                                $foto;
-                                if (file_exists('images/' . $data['foto'])) {
-                                    $foto = 'images/' . $data['foto'];
-                                } else {
-                                    $foto = 'images/placeholder.png';
-                                }
-                                if ($i == 1) : ?>
-                                    <h6>Kafe di Tangerang</h6>
-                                <?php endif; ?>
-                                <div class="card">
-                                    <div class="card-header">
+                            if (isset($stmtkafe)) :
+                                while ($data = $stmtkafe->fetch(PDO::FETCH_ASSOC)) :
+                                    $i++;
+                                    $nama = $data['nama'];
+                                    $deskripsi = $data['deskripsi'];
+                                    $foto;
+                                    if (file_exists('images/' . $data['foto'])) {
+                                        $foto = 'images/' . $data['foto'];
+                                    } else {
+                                        $foto = 'images/placeholder.png';
+                                    }
+                                    if ($i == 1) : ?>
+                                        <h6>Kafe di Tangerang</h6>
+                                    <?php endif; ?>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <dl class="row">
+                                                <dt class="col">
+                                                    <h6><?= $data['merek']; ?></h6>
+                                                </dt>
+                                                <dd class="col">
+                                                    <a class="btn btn-outline-info" href="index.php?page=formrating&page2=tempat&kategori=<?= $kategori = $_GET['page']; ?>&id=<?= $id = $data['id_rentangharga']; ?>&action=read"><i data-feather="clipboard"></i>Berikan ulasan</a>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <img src="<?= $foto; ?>" class="card-img-top" loading="lazy">
                                         <dl class="row">
                                             <dt class="col">
-                                                <h6><?= $data['merek']; ?></h6>
+                                                <p><strong>Harga</strong></p>
                                             </dt>
                                             <dd class="col">
-                                                <a class="btn btn-outline-info" href="index.php?page=formrating&page2=tempat&kategori=<?= $kategori = $_GET['page']; ?>&id=<?= $id = $data['id_rentangharga']; ?>&action=read"><i data-feather="clipboard"></i>Berikan ulasan</a>
+                                                <p>Rp <em><?= $data['hargaminimal']; ?></em>-<em><?= $data['hargamaksimal']; ?></em></p>
                                             </dd>
                                         </dl>
+                                        <dl class="row">
+                                            <dt class="col">
+                                                <p><strong>Lokasi</strong></p>
+                                            </dt>
+                                            <dd class="col">
+                                                <p><?= $data['lokasi']; ?></p>
+                                            </dd>
+                                        </dl>
+                                        <?php
+                                        if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") : ?>
+                                            <a href="index.php?page=edittempat&kategori=<?= $kategori; ?>&id=<?= $data['id_rentangharga']; ?>&id2=<?= $id2 = $data['id_artikel']; ?>&action=edit" class="btn btn-warning btn-sm">
+                                                <span data-feather="edit"></span>Ubah Data <em><?= $data['merek']; ?></em></a>
+                                        <?php endif; ?>
                                     </div>
-                                    <img src="<?= $foto; ?>" class="card-img-top" loading="lazy">
-                                    <dl class="row">
-                                        <dt class="col-3">
-                                            <p><strong>Harga</strong></p>
-                                        </dt>
-                                        <dd class="col-9">
-                                            <p>Rp <em><?= $data['hargaminimal']; ?></em>-<em><?= $data['hargamaksimal']; ?></em></p>
-                                        </dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-3">
-                                            <p><strong>Lokasi</strong></p>
-                                        </dt>
-                                        <dd class="col-9">
-                                            <p><?= $data['lokasi']; ?></p>
-                                        </dd>
-                                    </dl>
-                                    <?php
-                                    if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") : ?>
-                                        <a href="index.php?page=edittempat&kategori=<?= $kategori; ?>&id=<?= $data['id_rentangharga']; ?>&id2=<?= $id2 = $data['id_artikel']; ?>&action=edit" class="btn btn-warning btn-sm">
-                                            <span data-feather="edit"></span>Ubah Data <em><?= $data['merek']; ?></em></a>
-                                    <?php endif; ?>
-                                </div>
-                            <?php endwhile; ?>
+                            <?php endwhile;
+                            endif; ?>
                         </div>
                         <div id="section3">
                             <?php $i = 0;
@@ -218,61 +250,63 @@ if (isset($stmtbanner)) {
                                     <p><?= $data['deskripsi']; ?></p>
                                 </div>
                                 <?php endif;
-                            while ($data = $stmtresto->fetch(PDO::FETCH_ASSOC)) :
-                                $i++;
-                                $nama = $data['nama'];
-                                $deskripsi = $data['deskripsi'];
-                                $foto;
-                                if (file_exists('images/' . $data['foto'])) {
-                                    $foto = 'images/' . $data['foto'];
-                                } else {
-                                    $foto = 'images/placeholder.png';
-                                }
-                                if ($i == 1) : ?>
-                                    <h6>Restoran di Tangerang</h6>
-                                <?php endif; ?>
-                                <div class="card">
-                                    <div class="card-header">
+                            if (isset($stmtresto)) :
+                                while ($data = $stmtresto->fetch(PDO::FETCH_ASSOC)) :
+                                    $i++;
+                                    $nama = $data['nama'];
+                                    $deskripsi = $data['deskripsi'];
+                                    $foto;
+                                    if (file_exists('images/' . $data['foto'])) {
+                                        $foto = 'images/' . $data['foto'];
+                                    } else {
+                                        $foto = 'images/placeholder.png';
+                                    }
+                                    if ($i == 1) : ?>
+                                        <h6>Restoran di Tangerang</h6>
+                                    <?php endif; ?>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <dl class="row">
+                                                <dt class="col">
+                                                    <h6><?= $data['merek']; ?></h6>
+                                                </dt>
+                                                <dd class="col ">
+                                                    <a class="btn btn-outline-info" href="index.php?page=formrating&page2=tempat&kategori=<?= $kategori = $_GET['page']; ?>&id=<?= $id = $data['id_rentangharga']; ?>&action=read"><i data-feather="clipboard"></i>Berikan ulasan</a>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <img src="<?= $foto; ?>" class="card-img-top" loading="lazy">
                                         <dl class="row">
                                             <dt class="col">
-                                                <h6><?= $data['merek']; ?></h6>
+                                                <p><strong>Harga</strong></p>
                                             </dt>
                                             <dd class="col">
-                                                <a class="btn btn-outline-info" href="index.php?page=formrating&page2=tempat&kategori=<?= $kategori = $_GET['page']; ?>&id=<?= $id = $data['id_rentangharga']; ?>&action=read"><i data-feather="clipboard"></i>Berikan ulasan</a>
+                                                <p>Rp <em><?= $data['hargaminimal']; ?></em>-<em><?= $data['hargamaksimal']; ?></em></p>
                                             </dd>
                                         </dl>
+                                        <dl class="row">
+                                            <dt class="col">
+                                                <p><strong>Lokasi</strong></p>
+                                            </dt>
+                                            <dd class="col">
+                                                <p><?= $data['lokasi']; ?></p>
+                                            </dd>
+                                        </dl>
+                                        <?php
+                                        if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") : ?>
+                                            <a href="index.php?page=edittempat&kategori=<?= $kategori; ?>&id=<?= $data['id_rentangharga']; ?>&id2=<?= $id2 = $data['id_artikel']; ?>&action=edit" class="btn btn-warning btn-sm">
+                                                <span data-feather="edit"></span>Ubah Data <em><?= $data['merek']; ?></em></a>
+                                        <?php endif; ?>
                                     </div>
-                                    <img src="<?= $foto; ?>" class="card-img-top" loading="lazy">
-                                    <dl class="row">
-                                        <dt class="col-3">
-                                            <p><strong>Harga</strong></p>
-                                        </dt>
-                                        <dd class="col-9">
-                                            <p>Rp <em><?= $data['hargaminimal']; ?></em>-<em><?= $data['hargamaksimal']; ?></em></p>
-                                        </dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-3">
-                                            <p><strong>Lokasi</strong></p>
-                                        </dt>
-                                        <dd class="col-9">
-                                            <p><?= $data['lokasi']; ?></p>
-                                        </dd>
-                                    </dl>
-                                    <?php
-                                    if (isset($_SESSION['role']) && $_SESSION['role'] == "admin") : ?>
-                                        <a href="index.php?page=edittempat&kategori=<?= $kategori; ?>&id=<?= $data['id_rentangharga']; ?>&id2=<?= $id2 = $data['id_artikel']; ?>&action=edit" class="btn btn-warning btn-sm">
-                                            <span data-feather="edit"></span>Ubah Data <em><?= $data['merek']; ?></em></a>
-                                    <?php endif; ?>
-                                </div>
-                            <?php endwhile; ?>
+                            <?php endwhile;
+                            endif; ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-4 col-s-12" id="body2">
         <?php
         require 'formtempat.php';
         ?>
@@ -282,74 +316,77 @@ if (isset($stmtbanner)) {
             </div>
             <div class="card-body">
                 <div id="section1">
-                    <?php while ($data = $stmtratepasar->fetch()) : ?>
-                        <dl class="row row-cols-1">
-                            <div class="card-header">
-                               <h6><strong><?= $data['penulis']; ?></strong> memberikan ulasan <em><?= $data['merek']; ?></em></h6>
-                            </div>
-                             <dt class="col-4">
-                                <h6>Rating</h6>
-                            </dt>
-                            <dd class="col-8">
-                                <?php for ($i = 0; $i < intval($data['rating']); $i++) : ?>
-                                    <i data-feather="star"></i>
-                                <?php endfor; ?>
-                            </dd>
-                            <blockquote class="blockquote">
-                                 <p><?= $data['ulasan']; ?></p>
-                            </blockquote>
-                            <div class="card-footer">
-                                <p><?= $data['tanggalditulis']; ?></em></p>
-                            </div>
-                            </dd>
-                        </dl>
-                    <?php endwhile; ?>
+                    <?php if (isset($stmtratepasar)) : while ($data = $stmtratepasar->fetch()) : ?>
+                            <dl class="row">
+                                <div class="card-header">
+                                    <h6><strong><?= $data['penulis']; ?></strong> memberikan ulasan <em><?= $data['merek']; ?></em></h6>
+                                </div>
+                                <dt class="col">
+                                    <h6>Rating</h6>
+                                </dt>
+                                <dd class="col">
+                                    <?php for ($i = 0; $i < intval($data['rating']); $i++) : ?>
+                                        <i data-feather="star"></i>
+                                    <?php endfor; ?>
+                                </dd>
+                                <blockquote class="blockquote">
+                                    <p>"<?= $data['ulasan']; ?>"</p>
+                                </blockquote>
+                                <div class="card-footer">
+                                    <p><?= $data['tanggalditulis']; ?></em></p>
+                                </div>
+                                </dd>
+                            </dl>
+                    <?php endwhile;
+                    endif; ?>
                 </div>
                 <div id="section2">
-                    <?php while ($data = $stmtratekafe->fetch()) : ?>
-                        <dl class="row row-cols-1">
-                            <div class="card-header">
-                               <h6><strong><?= $data['penulis']; ?></strong> memberikan ulasan <em><?= $data['merek']; ?></em></h6>
-                            </div>
-                             <dt class="col-4">
-                                <h6>Rating</h6>
-                            </dt>
-                            <dd class="col-8">
-                                <?php for ($i = 0; $i < intval($data['rating']); $i++) : ?>
-                                    <i data-feather="star"></i>
-                                <?php endfor; ?>
-                            </dd>
-                            <blockquote class="blockquote">
-                                 <p><?= $data['ulasan']; ?></p>
-                            </blockquote>
-                            <div class="card-footer">
-                                <p><?= $data['tanggalditulis']; ?></em></p>
-                            </div>
-                        </dl>
-                    <?php endwhile; ?>
+                    <?php if (isset($stmtratekafe)) : while ($data = $stmtratekafe->fetch()) : ?>
+                            <dl class="row">
+                                <div class="card-header">
+                                    <h6><strong><?= $data['penulis']; ?></strong> memberikan ulasan <em><?= $data['merek']; ?></em></h6>
+                                </div>
+                                <dt class="col">
+                                    <h6>Rating</h6>
+                                </dt>
+                                <dd class="col">
+                                    <?php for ($i = 0; $i < intval($data['rating']); $i++) : ?>
+                                        <i data-feather="star"></i>
+                                    <?php endfor; ?>
+                                </dd>
+                                <blockquote class="blockquote">
+                                    <p>"<?= $data['ulasan']; ?>"</p>
+                                </blockquote>
+                                <div class="card-footer">
+                                    <p><?= $data['tanggalditulis']; ?></em></p>
+                                </div>
+                            </dl>
+                    <?php endwhile;
+                    endif; ?>
                 </div>
                 <div id="section3">
-                    <?php while ($data = $stmtrateresto->fetch()) : ?>
-                        <dl class="row row-cols-1">
-                            <div class="card-header">
-                               <h6><strong><?= $data['penulis']; ?></strong> memberikan ulasan <em><?= $data['merek']; ?></em></h6>
-                            </div>
-                             <dt class="col-4">
-                                <h6>Rating</h6>
-                            </dt>
-                            <dd class="col-8">
-                                <?php for ($i = 0; $i < intval($data['rating']); $i++) : ?>
-                                    <i data-feather="star"></i>
-                                <?php endfor; ?>
-                            </dd>
-                            <blockquote class="blockquote">
-                                 <p><?= $data['ulasan']; ?></p>
-                            </blockquote>
-                            <div class="card-footer">
-                                <p><?= $data['tanggalditulis']; ?></em></p>
-                            </div>
-                        </dl>
-                    <?php endwhile; ?>
+                    <?php if (isset($stmtrateresto)) : while ($data = $stmtrateresto->fetch()) : ?>
+                            <dl class="row">
+                                <div class="card-header">
+                                    <h6><strong><?= $data['penulis']; ?></strong> memberikan ulasan <em><?= $data['merek']; ?></em></h6>
+                                </div>
+                                <dt class="col">
+                                    <h6>Rating</h6>
+                                </dt>
+                                <dd class="col">
+                                    <?php for ($i = 0; $i < intval($data['rating']); $i++) : ?>
+                                        <i data-feather="star"></i>
+                                    <?php endfor; ?>
+                                </dd>
+                                <blockquote class="blockquote">
+                                    <p>"<?= $data['ulasan']; ?>"</p>
+                                </blockquote>
+                                <div class="card-footer">
+                                    <p><?= $data['tanggalditulis']; ?></em></p>
+                                </div>
+                            </dl>
+                    <?php endwhile;
+                    endif; ?>
                 </div>
             </div>
         </div>

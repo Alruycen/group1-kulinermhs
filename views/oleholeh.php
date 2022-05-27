@@ -2,6 +2,17 @@
     include 'views/admin.php';
 ?>
 <style>
+    body{
+        overflow-y:scroll;
+    }
+    @media only screen and (min-width: 600px) {
+        /* For tablets: */
+        body { overflow-y: scroll; }
+    }
+    @media only screen and (min-width: 992px) {
+        /* For desktop: */
+        body { overflow-y: clip; }
+    }
     .d-flex {
         padding: 5% 2.5% 0 2.5%;
     }
@@ -11,20 +22,22 @@
     }
     .col-6 .card-body {
         background: #6aabd2;
+        overflow-y: scroll;
+        max-height: 20rem;
     }
     .col-6 .card {
         background: #d9e4ec;
     }
     .card-header {
-        height: 4rem;
+        max-height: 4rem;
     }
 
     .card-img-top {
-        height: 12rem;
+        max-height: 12rem;
     }
 
     .scrolling {
-        height: 8rem;
+        max-height: 8rem;
     }
     .scrolling::-webkit-scrollbar {
         display: none;
@@ -102,19 +115,19 @@ require 'formoleh.php';
                                 <img src="<?= $foto; ?>" class="card-img-top"
                                 loading="lazy">
                                 <div class="scrolling">
-                                    <dl class="row">
-                                        <dt class="col-4">
+                                    <dl class="row row-cols-1">
+                                        <dt class="col">
                                             <p><strong>Harga</strong></p>
                                         </dt>
-                                        <dd class="col-8">
+                                        <dd class="col">
                                             <p>Rp <em><?= $data['hargaminimal']; ?></em>-<em><?= $data['hargamaksimal']; ?></em></p>
                                         </dd>
                                     </dl>
                                     <dl class="row">
-                                        <dt class="col-4">
+                                        <dt class="col">
                                             <p><strong>Lokasi</strong></p>
                                         </dt>
-                                        <dd class="col-8">
+                                        <dd class="col">
                                             <p><?= $data['lokasi']; ?></p>
                                         </dd>
                                     </dl>

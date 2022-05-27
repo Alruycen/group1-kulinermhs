@@ -3,18 +3,16 @@
 ?>
 <style>
     .row {
+        padding-left: 5%;
         margin-bottom: 5%;
     }
 
-    .col-m-8 {
-        padding-top: 5%;
-        max-width: 66%;
+    #body1 {
+        padding: 5% 5% 0 5%;
     }
 
-    .col-m-4 {
+    #body2 {
         padding-top: 5%;
-        padding-left: 10%;
-        max-width: 33%;
     }
 
     .row .row {
@@ -23,21 +21,28 @@
     }
 
     .col-6 {
-        padding-right: 5%;
+        position: relative;
     }
 
     .col-4 {
         position: relative;
-        padding-top: 1%;
+
+    }
+    .scrolling::-webkit-scrollbar {
+        display: none;
     }
 
     .scrolling {
-        height: 12rem;
+        max-height: 14rem;
         background: #d9e4ec;
     }
 
     .card-img-top {
-        height: 12rem;
+        max-height: 12rem;
+    }
+
+    form select {
+        margin-right: 1%;
     }
 
     #sidebar {
@@ -48,7 +53,7 @@
 
 
 <div class="row">
-    <div class="col-m-8">
+    <div class="col-8 col-s-6" id="body1">
         <?php
         include 'process/proses_resep.php';
         if(isset($stmt)) :
@@ -60,7 +65,7 @@
                 }
                 $bahan = explode(',', $data['bahan']);
                 $prosedur = explode('.', $data['prosedur']);?>     
-        <div class="row row-cols-2">
+        <div class="row">
             <div class="col-6">
                 <div class="card">
                     <div class="card-header">
@@ -98,7 +103,7 @@
         <?php endwhile; 
         endif; ?>
     </div>
-    <div class="col-m-4">
+    <div class="col-4 col-s-6" id="body2">
         <div class="card" id="sidebar">
             <div class="card-body">
                 <?php
@@ -117,7 +122,7 @@
                                 $foto = 'images/placeholder.png';
                             }
                     ?>
-                            <a class="card-link" href="#"><img class="card-img mb-2" src="<?= $foto; ?>" alt="artikel terbaru"></a>
+                            <a class="card-link" href="index.php?page=zoomsidebar&kategori=<?= $kategori = $_GET['page']; ?>&idterbaru=<?= $data['id_artikel']; ?>"><img class="card-img mb-2" src="<?= $foto; ?>" alt="artikel terbaru"></a>
                     <?php endwhile;
                     endif; ?>
                     <li>
@@ -133,7 +138,7 @@
                                 $foto = 'images/placeholder.png';
                             }
                     ?>
-                            <a class="card-link" href="#"><img class="card-img mb-2" src="<?= $foto; ?>" alt="yang paling diminati"></a>
+                            <a class="card-link" href="index.php?page=zoomsidebar&kategori=<?= $kategori = $_GET['page']; ?>&idterbaru=<?= $data['id_artikel']; ?>"><img class="card-img mb-2" src="<?= $foto; ?>" alt="yang paling diminati"></a>
                     <?php endwhile;
                     endif; ?>
                 </ul>

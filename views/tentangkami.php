@@ -5,11 +5,7 @@ session_start();
 <style>
     body {
         background: #d9e4ec;
-        overflow-x: clip;
-    }
-
-    .col {
-        background: blue;
+        margin-bottom: 10%;
     }
 
     .card-header {
@@ -19,7 +15,7 @@ session_start();
 
     .col-6 {
         margin-right: 5%;
-
+        margin-bottom: 5%;
     }
 
     .col-6 .card {
@@ -142,4 +138,3 @@ session_start();
         </div>
     </div>
 </div>
-<br /><br /><br /><br /><br /><br />

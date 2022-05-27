@@ -7,16 +7,12 @@
         margin-bottom: 5%;
     }
 
-    .col-m-8 {
-        padding-left: 5%;
-        padding-top: 5%;
-        max-width: 66%;
+    #body1 {
+        padding: 5% 5% 0 5%;
     }
 
-    .col-m-4 {
+    #body2 {
         padding-top: 5%;
-        padding-left: 10%;
-        max-width: 33%;
     }
 
     .row .row {
@@ -30,7 +26,6 @@
 
     .col-4 {
         position: relative;
-        background: #d9e4ec;
 
     }
     .scrolling::-webkit-scrollbar {
@@ -38,17 +33,21 @@
     }
 
     .scrolling {
-        height: 16rem;
+        max-height: 12rem;
         background: #d9e4ec;
     }
 
     .card-img-top {
-        height: 12rem;
+        max-height: 12rem;
+    }
+
+    form select {
+        margin-right: 1%;
     }
 
 </style>
 <div class="row">
-    <div class="col-m-8">
+    <div class="col-8 col-s-12" id="body1">
         <?php
         include 'process/proses_artikel.php';
         if (isset($stmt)) :
@@ -95,7 +94,7 @@
         endif; ?>
 
     </div>
-    <div class="col-m-4">
+    <div class="col-4" id="body2">
         <?php
         include 'process/proses_artikel.php';
         include 'views/sidebar.php'; ?>
