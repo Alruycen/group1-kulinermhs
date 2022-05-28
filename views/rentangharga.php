@@ -9,15 +9,23 @@ require 'process/proses_harga.php';
 
     #body1 {
         padding-right: 3%;
+        margin-bottom: 10%;
     }
 
-    #body1 .card {
-        background: #6aabd2;
+    #body1 .card-header {
+        background: #4e545c;
+        color: #e5e8e8;
+    }
+
+    #body1 .card-body {
+        background: #e5e8e8;
     }
 
     #body1 .card .card {
-        background: #d9e4ec;
         margin-bottom: 5%;
+        padding: 5%;
+        background: #4e545c;
+        color: #e5e8e8;
     }
 
     #body1 dt p {
@@ -32,8 +40,29 @@ require 'process/proses_harga.php';
         float: right;
     }
 
-    #body2 {
-        background: #6aabd2;
+    #body2 .card-header {
+        background: #4e545c;
+        color: #e5e8e8;
+    }
+
+    #body2 .card-body {
+        background: #e5e8e8;
+    }
+
+    #body2 .card .card {
+        background: #e5e8e8;
+    }
+
+    #body2 .card .row {
+        background: #4e545c;
+        color: #e5e8e8;
+        margin-bottom: 5%;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #body2 dl {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .card-body {
@@ -124,7 +153,7 @@ require 'process/proses_harga.php';
                 <h5>Rating & Review</h5>
             </div>
             <div class="card-body">
-                <div id="section">
+                <div class="card">
                     <?php
                     if (isset($stmt)) :
                         while ($data = $stmt->fetch()) : ?>
@@ -147,6 +176,7 @@ require 'process/proses_harga.php';
                                     <p><?= $data['tanggalditulis']; ?></em></p>
                                 </div>
                             </dl>
+                            <br/>
                     <?php endwhile;
                     endif; ?>
                 </div>

@@ -5,8 +5,10 @@
 ?>
 <style>
     #sidebar {
-        background: #d9e4ec;
+        background: #4e545c;
+        color: #e5e8e8;
     }
+
 </style>
 
 <div class="card" id="sidebar">
@@ -65,8 +67,8 @@
         </ul>
         <h6 class="card-subtitle">Cari Jajanan?</h6>
         <ul>
-            <li><a class="card-link" href="index.php?page=oleholeh">Cek di oleh-oleh khas</a></li>
-            <li><a class="card-link" href="index.php?page=tempat">Cek di tempat pasar malam</a></li>
+            <li><a class="card-link link-light" href="index.php?page=oleholeh">Cek di oleh-oleh khas</a></li>
+            <li><a class="card-link link-light" href="index.php?page=tempat">Cek di tempat pasar malam</a></li>
         </ul>
     </div>
 </div>
@@ -118,7 +120,7 @@
         </ul>
         <h6 class="card-subtitle">Cari tempat nongkrong?</h6>
         <ul>
-            <li><a class="card-link" href="index.php?page=tempat">Cek di tempat kafe</a></li>
+            <li><a class="card-link link-light" href="index.php?page=tempat">Cek di tempat kafe</a></li>
         </ul>
     </div>
 </div>
@@ -170,7 +172,7 @@
         </ul>
         <h6 class="card-subtitle">Cari Lebih Banyak?</h6>
         <ul>
-            <li><a class="card-link" href="index.php?page=tempat">Cek di tempat</a></li>
+            <li><a class="card-link link-light" href="index.php?page=tempat">Cek di tempat</a></li>
         </ul>
     </div>
 </div>
@@ -222,7 +224,7 @@
         </ul>
         <h6 class="card-subtitle">Cari Lebih Banyak?</h6>
         <ul>
-            <li><a class="card-link" href="index.php?page=oleholeh">Cek di oleh-oleh khas</a></li>
+            <li><a class="card-link link-light" href="index.php?page=oleholeh">Cek di oleh-oleh khas</a></li>
         </ul>
     </div>
 </div>
@@ -277,8 +279,8 @@
         </ul>
         <h6 class="card-subtitle">Cari Jajanan?</h6>
         <ul>
-            <li><a class="card-link" href="index.php?page=oleholeh">Cek di oleh-oleh khas</a></li>
-            <li><a class="card-link" href="index.php?page=tempat">Cek di tempat pasar malam</a></li>
+            <li><a class="card-link link-light" href="index.php?page=oleholeh">Cek di oleh-oleh khas</a></li>
+            <li><a class="card-link link-light" href="index.php?page=tempat">Cek di tempat pasar malam</a></li>
         </ul>
     </div>
 </div>
@@ -330,7 +332,7 @@
         </ul>
         <h6 class="card-subtitle">Cari tempat nongkrong
         <ul>
-            <li><a class="card-link" href="index.php?page=tempat">Cek di tempat kafe</a></li>
+            <li><a class="card-link link-light" href="index.php?page=tempat">Cek di tempat kafe</a></li>
         </ul>
     </div>
 </div>
@@ -382,7 +384,7 @@
         </ul>
         <h6 class="card-subtitle">Cari Lebih Banyak?</h6>
         <ul>
-            <li><a class="card-link" href="index.php?page=tempat">Cek di tempat</a></li>
+            <li><a class="card-link link-light" href="index.php?page=tempat">Cek di tempat</a></li>
         </ul>
     </div>
 </div>
@@ -434,7 +436,7 @@
         </ul>
         <h6 class="card-subtitle">Cari Lebih Banyak?</h6>
         <ul>
-            <li><a class="card-link" href="index.php?page=oleholeh">Cek di oleh-oleh khas</a></li>
+            <li><a class="card-link link-light" href="index.php?page=oleholeh">Cek di oleh-oleh khas</a></li>
         </ul>
     </div>
 </div>
@@ -485,8 +487,8 @@
                                         endif; ?>
         </ul>
         <h6 class="card-subtitle">Lainnya</h6 <ul>
-        <li><a class="card-link" href="index.php?page=oleholeh">Cek juga oleh-oleh khas</a></li>
-        <li><a class="card-link" href="index.php?page=tempat">Cek juga tempat nongkrong</a></li>
+        <li><a class="card-link link-light" href="index.php?page=oleholeh">Cek juga oleh-oleh khas</a></li>
+        <li><a class="card-link link-light" href="index.php?page=tempat">Cek juga tempat nongkrong</a></li>
         </ul>
     </div>
 </div>
@@ -543,8 +545,8 @@
         </ul>
         <h6 class="card-subtitle">Lainnya</h6>
         <ul>
-            <li><a class="card-link" href="index.php?page=oleholeh">Cek juga oleh-oleh khas</a></li>
-            <li><a class="card-link" href="index.php?page=tempat">Cek juga tempat nongkrong</a></li>
+            <li><a class="card-link link-light" href="index.php?page=oleholeh">Cek juga oleh-oleh khas</a></li>
+            <li><a class="card-link link-light" href="index.php?page=tempat">Cek juga tempat nongkrong</a></li>
         </ul>
     </div>
 </div>

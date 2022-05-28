@@ -27,7 +27,8 @@ require 'process/proses_tempat.php';
         position: relative;
         max-height: 20rem;
         overflow-y: scroll;
-        background: #6aabd2;
+        background: #4e545c;
+        border-radius: 1rem;
         
     }
 
@@ -42,16 +43,12 @@ require 'process/proses_tempat.php';
     }
 
     #judulscroll {
-        border-radius: 1rem;
         margin-bottom: 5%;
     }
 
-    #isiscroll {
-        border-radius: 1rem;
-    }
-
     #body1 .card {
-        background: #d9e4ec;
+        background: #4e545c;
+        color: #e5e8e8;
         margin-top: 5%;
         margin-bottom: 5%;
     }
@@ -67,16 +64,35 @@ require 'process/proses_tempat.php';
     #body2 {
         max-height: 20rem;
         overflow-y: scroll;
-        background: #6aabd2;
         margin-bottom: 5%;
     }
 
     #body2 form {
-        margin-top: 5%;
         margin-bottom: 5%;
         position: sticky;
         top: 0;
         z-index: 1;
+    }
+
+    #body2 .card-header {
+        background: #4e545c;
+        color: #e5e8e8;
+    }
+
+    #body2 .card-body {
+        background: #e5e8e8;
+    }
+
+    #body2 .card .card {
+        background: #e5e8e8;
+    }
+
+
+    #body2 .card .row {
+        background: #4e545c;
+        color: #e5e8e8;
+        margin-bottom: 5%;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     #body2 a {
@@ -93,10 +109,6 @@ require 'process/proses_tempat.php';
 
     form select {
         margin-right: 1%;
-    }
-
-    .btn-outline-success {
-        background: #d9e4ec;
     }
 </style>
 <?php

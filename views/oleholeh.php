@@ -20,14 +20,25 @@
     .col-6 {
         padding: 5%;
     }
+
+    .col-6 .card-header {
+        background: #4e545c;
+        color: #e5e8e8;
+    }
+
+    .col-6 .card .card {
+        background: #4e545c;
+        color: #e5e8e8;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
     .col-6 .card-body {
-        background: #6aabd2;
+        background: #e5e8e8;
         overflow-y: scroll;
         max-height: 20rem;
     }
-    .col-6 .card {
-        background: #d9e4ec;
-    }
+
     .card-header {
         max-height: 4rem;
     }

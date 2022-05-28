@@ -26,6 +26,7 @@
     }
     .card-img-top {
         height:8rem;
+        background: #4e545c;
     }
 </style>
 <?php
@@ -110,7 +111,7 @@
                 <span class="input-group-text" id="basic-addon1"><i data-feather="search"></i></span>
                 <input class="form-control me-2" list="livesearch" id="search" name="search" placeholder="Makanan khas Tangerang" aria-describedby="basic-addon1" onkeyup="showHint(this.value)">
                 <datalist id="livesearch"></datalist>
-                <button class="btn btn-outline-success" type="hidden"></button>
+                <button class="btn btn-outline-light" type="hidden"></button>
             </form>
         </div>
     </div>
@@ -119,41 +120,31 @@
         <div class="col">
             <div class="card">
                 <img class="card-img-top">
-                <div class="card-body">
-                    <a href="index.php?page=makanan" class="btn btn-outline-success stretched-link">Go to Makanan</a>
-                </div>
+                <a href="index.php?page=makanan" class="btn btn-outline-dark stretched-link">Go to Makanan</a>
             </div>
         </div>
         <div class="col">
             <div class="card">
                 <img class="card-img-top">
-                <div class="card-body">
-                    <a href="index.php?page=minuman" class="btn btn-outline-success stretched-link">Go to Minuman</a>
-                </div>
+                <a href="index.php?page=minuman" class="btn btn-outline-dark stretched-link">Go to Minuman</a>
             </div>
         </div>
         <div class="col">
             <div class="card">
                 <img class="card-img-top">
-                <div class="card-body">
-                    <a href="index.php?page=tempat" class="btn btn-outline-success stretched-link">Go to Tempat</a>
-                </div>
+                <a href="index.php?page=tempat" class="btn btn-outline-dark stretched-link">Go to Tempat</a>
             </div>
         </div>
         <div class="col">
             <div class="card">
                 <img class="card-img-top">
-                <div class="card-body">
-                    <a href="index.php?page=oleholeh" class="btn btn-outline-success stretched-link">Go to Oleh-Oleh</a>
-                </div>
+                <a href="index.php?page=oleholeh" class="btn btn-outline-dark stretched-link">Go to Oleh-Oleh</a>
             </div>
         </div>
         <div class="col">
             <div class="card">
                 <img class="card-img-top">
-                <div class="card-body">
-                    <a href="index.php?page=tentangkami" class="btn btn-outline-success stretched-link">Go to Tentang Kami</a>
-                </div>
+                <a href="index.php?page=tentangkami" class="btn btn-outline-dark stretched-link">Go to Tentang Kami</a>
             </div>
         </div>
     </div>

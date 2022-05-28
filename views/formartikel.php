@@ -8,5 +8,5 @@
         <option value="oleholeh" label="Oleh-Oleh" />
     </select>
     <input class="form-control me-2" type="text" id="search" name="search" placeholder="Makanan khas Tangerang" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit"></button>
+    <button class="btn btn-outline-info" type="submit"></button>
 </form>

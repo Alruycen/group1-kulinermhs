@@ -3,33 +3,30 @@
 session_start();
 ?>
 <style>
-    body {
-        background: #d9e4ec;
-        margin-bottom: 10%;
-    }
-
-    .card-header {
-        background: #385E72;
-        color: white;
-    }
 
     .col-6 {
         margin-right: 5%;
         margin-bottom: 5%;
     }
 
+    .card-header {
+        background: #4e545c;
+        color: #e5e8e8;
+    }
+
     .col-6 .card {
-        background: #6aabd2;
+        background: #e5e8e8;
     }
 
     .col-6 .card .card {
-        background: white;
+        background: #4e545c;
+        color: #e5e8e8;
         margin: 5%;
         padding: 2% 7% 5% 7%;
     }
 
     .col-5 .card {
-        background: #6aabd2;
+        background: #e5e8e8;
     }
 
     .img-fluid {
@@ -38,14 +35,6 @@ session_start();
 
     .row {
         margin-top: 5%;
-    }
-
-    .active {
-        border-bottom: 3px solid #fff;
-    }
-
-    .nav-link:hover {
-        border-bottom: 1px solid #fff;
     }
 </style>
 
@@ -62,7 +51,7 @@ session_start();
                         <textarea class="form-control" name="tanggapan" id="tanggapan" rows="5"></textarea>
                         <br />
                         <div class="d-grid gap-2">
-                            <button type="submit" name="submit-tanggapan" class="btn btn-outline-dark">Kirim</button>
+                            <button type="submit" name="submit-tanggapan" class="btn btn-outline-info"><i data-feather="clipboard"></i> Kirim</button>
                         </div>
                     </form>
                 </div>

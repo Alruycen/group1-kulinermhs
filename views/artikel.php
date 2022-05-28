@@ -15,26 +15,22 @@
         padding-top: 5%;
     }
 
-    .row .row {
-        background: #6aabd2;
-        padding: 5%;
+    .row .col-6 .card {
+        background: #4e545c;
+        color: #e5e8e8;
     }
 
-    .col-6 {
-        margin-right: 10%;
+    .row .col-4 {
+        color: #e5e8e8;
     }
 
-    .col-4 {
-        position: relative;
-
-    }
     .scrolling::-webkit-scrollbar {
         display: none;
     }
 
     .scrolling {
         max-height: 12rem;
-        background: #d9e4ec;
+        background: #4e545c;
     }
 
     .card-img-top {
@@ -71,9 +67,7 @@
                 <div class="row">
                     <div class="col-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h3><?= $nama; ?></h3>
-                            </div>
+                            <h3 class="p-3"><?= $nama; ?></h3>
                         </div>
                         <img class="card-img-top" src="<?= $foto; ?>" loading="lazy">
                     </div>

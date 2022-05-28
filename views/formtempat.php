@@ -7,5 +7,5 @@
         <option value="3" label="Restoran" />
     </select>
     <input class="form-control me-2" type="text" name="search" placeholder="Makanan khas Tangerang" aria-label="Search">
-    <button class="btn btn-outline-success" type="hidden"><i data-feather="search"></i></button>
+    <button class="btn btn-outline-info" type="hidden"><i data-feather="search"></i></button>
 </form>

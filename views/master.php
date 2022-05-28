@@ -71,6 +71,8 @@ if (!isset($_GET['page'])) {
         body {
             background: #e5e8e8;
             padding-bottom: 10%;
+            overflow-x:clip;
+            
         }
 
         img {
@@ -82,7 +84,7 @@ if (!isset($_GET['page'])) {
             border-bottom: 3px solid #e5e8e8;
         }
 
-        .nav-link:hover {
+        .nav-link:hover, .nav-link:active {
             border-bottom: 1px solid #e5e8e8;
         }
 

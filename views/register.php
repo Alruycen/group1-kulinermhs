@@ -32,5 +32,7 @@
 </div>
 
 <div class="text-center">
-    <a class="btn btn-default btn-rounded mb-4" data-bs-toggle="modal" data-bs-target="#registerForm">REGISTER HERE</a>
+    <div class="d-grid gap-2">
+        <a class="btn btn-outline-dark btn-rounded mb-4" data-bs-toggle="modal" data-bs-target="#registerForm">REGISTER HERE</a>
+    </div>
 </div>

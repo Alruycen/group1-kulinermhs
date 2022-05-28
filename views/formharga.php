@@ -8,5 +8,5 @@
         <option value="3" label="Harga > Rp 100.000" />
     </select>
     <input class="form-control me-2" type="text" name="search" placeholder="Makanan khas Tangerang" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit"><i data-feather="search"></i></button>
+    <button class="btn btn-outline-light" type="submit"><i data-feather="search"></i></button>
 </form>

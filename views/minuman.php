@@ -18,7 +18,7 @@
 
     .card-img-top {
         height: 12rem;
-        background: #6aabd2;
+        background: #4e545c;
     }
     form select {
         margin-right: 1%;
@@ -33,44 +33,34 @@
         <div class="row row-cols-1 g-4">
             <div class="col-6 col-s-12">
                 <div class="card">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Resep</h4>
-                    </div>
-                    <a href="index.php?page=resep&kategori=minuman" class="stretched-link"><img class="card-img-top"></a>
+                    <a href="index.php?page=resep&kategori=minuman" class="btn-outline-dark stretched-link p-3"><h4 class="my-0 fw-normal">Resep</h4></a>
+                    <img class="card-img-top">
                 </div>
             </div>
             <div class="col-6 col-s-12">
                 <div class="card">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Minuman viral</h4>
-                    </div>
-                    <a href="index.php?page=artikel&kategori=minuman" class="stretched-link"><img class="card-img-top"></a>
+                    <a href="index.php?page=artikel&kategori=minuman" class="btn-outline-dark p-3 stretched-link"><h4 class="my-0 fw-normal">Minuman viral</h4></a>
+                    <img class="card-img-top">
                 </div>
             </div>
         </div>
         <div class="row row-cols-1 g-4">
             <div class="col-4 col-s-12">
                 <div class="card">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Minuman khas</h4>
-                    </div>
-                    <a href="index.php?page=artikel&kategori=minuman" class="stretched-link"><img class="card-img-top"></a>
+                    <a href="index.php?page=artikel&kategori=minuman" class="btn-outline-dark p-3 stretched-link"><h4 class="my-0 fw-normal">Minuman khas</h4></a>
+                    <img class="card-img-top">
                 </div>
             </div>
             <div class="col-4 col-s-12">
                 <div class="card">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Rentang harga</h4>
-                    </div>
-                    <a href="index.php?page=rentangharga&kategori=minuman" class="stretched-link"><img class="card-img-top"></a>
+                    <a href="index.php?page=rentangharga&kategori=minuman" class="btn-outline-dark p-3 stretched-link"><h4 class="my-0 fw-normal">Rentang harga</h4></a>
+                    <img class="card-img-top">
                 </div>
             </div>
             <div class="col-4 col-s-12">
                 <div class="card">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Rating & Review</h4>
-                    </div>
-                    <a href="index.php?page=rentangharga&kategori=minuman" class="stretched-link"><img class="card-img-top"></a>
+                    <a href="index.php?page=rentangharga&kategori=minuman" class="btn-outline-dark p-3 stretched-link"><h4 class="my-0 fw-normal">Rating & Review</h4></a>
+                    <img class="card-img-top">
                 </div>
             </div>
         </div>

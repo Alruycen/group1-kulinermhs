@@ -11,13 +11,14 @@
     .col-6 {
         padding: 0 5% 5% 0;
     }
+
     form select {
         margin-right: 1%;
     }
 
     .card-img-top {
         height: 12rem;
-        background: #6aabd2
+        background: #4e545c;
     }
 
     #sidebar img {
@@ -29,34 +30,26 @@
         <div class="row row-cols-1 g-4">
             <div class="col-6 col-s-12">
                 <div class="card">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Makanan khas</h4>
-                    </div>
-                    <a href="index.php?page=artikel&kategori=makanan" class="stretched-link"><img class="card-img-top"></a>
+                    <a href="index.php?page=artikel&kategori=makanan" class="btn-outline-dark stretched-link p-3"><h4 class="my-0 fw-normal">Makanan khas</h4></a>
+                    <img class="card-img-top">
                 </div>
             </div>
             <div class="col-6 col-s-12">
                 <div class="card">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Rating & Review</h4>
-                    </div>
-                    <a href="index.php?page=rentangharga&kategori=makanan" class="stretched-link"><img class="card-img-top"></a>
+                    <a href="index.php?page=rentangharga&kategori=makanan" class="btn-outline-dark stretched-link p-3"><h4 class="my-0 fw-normal">Rating & Review</h4></a>
+                    <img class="card-img-top">
                 </div>
             </div>
             <div class="col-6 col-s-12">
                 <div class="card">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Cari Restoran</h4>
-                    </div>
-                    <a href="index.php?page=tempat" class="stretched-link"><img class="card-img-top"></a>
+                    <a href="index.php?page=tempat" class="btn-outline-dark stretched-link p-3"><h4 class="my-0 fw-normal">Cari Restoran</h4></a>
+                    <img class="card-img-top">
                 </div>
             </div>
             <div class="col-6 col-s-12">
                 <div class="card">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Rentang Harga</h4>
-                    </div>
-                    <a href="index.php?page=rentangharga&kategori=makanan" class="stretched-link"><img class="card-img-top"></a>
+                    <a href="index.php?page=rentangharga&kategori=makanan" class="btn-outline-dark stretched-link p-3"><h4 class="my-0 fw-normal">Rentang Harga</h4></a>
+                    <img class="card-img-top">
                 </div>
             </div>
         </div>
