@@ -15,26 +15,23 @@
         padding-top: 5%;
     }
 
-    .row .row {
-        background: #6aabd2;
-        padding: 5%;
+    .row .col-6 .card {
+        background: #4e545c;
+        color: #e5e8e8;
     }
 
-    .col-6 {
-        position: relative;
+    .row .col-4 {
+        color: #e5e8e8;
     }
 
-    .col-4 {
-        position: relative;
-
-    }
     .scrolling::-webkit-scrollbar {
         display: none;
     }
 
     .scrolling {
-        max-height: 14rem;
-        background: #d9e4ec;
+        max-height: 12rem;
+        background: #4e545c;
+        color: #e5e8e8;
     }
 
     .card-img-top {
@@ -46,7 +43,8 @@
     }
 
     #sidebar {
-        background: #d9e4ec;
+        background: #4e545c;
+        color: #e5e8e8;
     }
 
 </style>

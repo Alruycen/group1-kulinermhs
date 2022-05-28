@@ -20,7 +20,8 @@
     }
 
     .card {
-        background: #d9e4ec;
+        background: #4e545c;
+        color: #e5e8e8;
         margin-bottom: 5%;
     }
 
@@ -40,14 +41,6 @@
         margin-bottom: 1%;
         visibility: visible;
         opacity: 0.9;
-    }
-
-    .active {
-        border-bottom: 3px solid #fff;
-    }
-
-    .nav-link:hover, .nav-link:active {
-        border-bottom: 1px solid #fff;
     }
 </style>
 <div class="row">
