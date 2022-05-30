@@ -93,8 +93,8 @@ require 'formoleh.php';
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <?php if ($i % 2 == 0) echo "</div>"; ?>
-                <?php endwhile;
+                        <?php if ($i % 2 == 0) echo "</div>"; 
+                    endwhile;
                 endif; ?>
                 <?php if ($i % 2 == 1) echo "</div>"; ?>
             </div>
@@ -150,10 +150,10 @@ require 'formoleh.php';
                                     <?php endif; ?>
                             </div>
                         </div>
-                        <?php if ($i % 2 == 0 && $i % 2 != 1) echo "</div>"; ?>
+                        <?php if ($i % 2 == 0) echo "</div>" ?>
                 <?php endwhile;
                 endif; ?>
-                <?php if ($i == 1) echo "</div>"; ?>
+                <?php if ($i % 2 == 1) echo "</div>"; ?>
             </div>
         </div>
     </div>

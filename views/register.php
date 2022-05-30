@@ -5,10 +5,10 @@
                 <h4 class="modal-title w-100 font-weight-bold" id="registerlabel">Sign Up</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form method="post" action="process/proses_tentangkami.php" class="row g-3 needs-validation" enctype="multipart/form-data">
+            <form method="post" action="index.php?page=tentangkami" class="row g-3 needs-validation" enctype="multipart/form-data">
                 <div class="modal-body mx-3">
                     <div class="form-control mb-5">
-                        <input type="text" id="registerForm-name" class="form-control validate" name="uname" required>
+                        <input type="text" id="registerForm-name" class="form-control validate" name="registername" required>
                         <label data-error="wrong" data-success="right" for="registerForm-name">Username</label>
                     </div>
 

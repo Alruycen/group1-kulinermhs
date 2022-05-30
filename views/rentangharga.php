@@ -140,8 +140,8 @@ require 'process/proses_harga.php';
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <?php if ($i % 2 == 0) echo "</div>"; ?>
-                <?php endwhile;
+                        <?php if ($i % 2 == 0) echo "</div>"; 
+                    endwhile;
                 endif; ?>
                 <?php if ($i % 2 == 1) echo "</div>"; ?>
             </div>
